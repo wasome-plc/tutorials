@@ -1,0 +1,13 @@
+[
+    {
+        "date": "",
+        "name": "g_num",
+        "type": "SINT",
+        "feature": "",
+        "category": "VAR_GLOBAL",
+        "init": "10",
+        "comment": "",
+        "location": "",
+        "row_index": 0
+    }
+]
