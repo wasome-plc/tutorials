@@ -21,7 +21,7 @@ END_TYPE
 
 (* 数据类型: 结构 *)
 TYPE STRUCT_ENV : STRUCT
-        temperatures : ARRAY_BYTES_WITH_RANGE; 
+        temperatures : ARRAY_BYTES_WITH_RANGE := [20,3(40)]; 
         humity : REAL;
         state : ENUM_STATE_MACHINE;        
     END_STRUCT ;
@@ -31,7 +31,7 @@ END_TYPE
 TYPE STRUCT_ENV_DATA : 
     STRUCT
         env : STRUCT_ENV;
-        dtime : TIME;
+        dtime: TIME;
     END_STRUCT ;
 END_TYPE
 
