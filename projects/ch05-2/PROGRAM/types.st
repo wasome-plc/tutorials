@@ -1,6 +1,6 @@
-(* 有子范围的数据类型 *)
+(* 有初始化的数据类型 *)
 TYPE BYTE_WITH_RANGE :
-    SINT(10..60) := 16#1A; (* 初始化为 0x1A *)
+    SINT := 16#1A; (* 初始化为 0x1A *)
 END_TYPE
 
 (** 数组数据类型 *)
@@ -29,7 +29,6 @@ END_TYPE
 TYPE STRUCT_ENV_DATA : 
     STRUCT
         env : STRUCT_ENV;
-        name : STRING := 'factory';
         dtime : TIME;
     END_STRUCT ;
 END_TYPE
