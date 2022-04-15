@@ -1,0 +1,9 @@
+{
+    "name": "ch08-2",
+    "version": "0.0.1",
+    "description": "Modbus example",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1649983471005
+}
