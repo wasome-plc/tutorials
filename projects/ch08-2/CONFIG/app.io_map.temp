@@ -1,0 +1,106 @@
+{
+    "inout": [],
+    "input": [
+        {
+            "access": "",
+            "location": 0,
+            "name": "PLC_PRG::x0",
+            "num": 1,
+            "type": "WORD"
+        },
+        {
+            "access": "",
+            "location": 2,
+            "name": "PLC_PRG::x1",
+            "num": 1,
+            "type": "DWORD"
+        },
+        {
+            "access": "",
+            "location": 6,
+            "name": "PLC_PRG::x2",
+            "num": 1,
+            "type": "DWORD"
+        },
+        {
+            "access": "",
+            "location": 10,
+            "name": "PLC_PRG::INPUT10_0",
+            "num": 1,
+            "type": "BOOL"
+        },
+        {
+            "access": "",
+            "bit": 1,
+            "location": 10,
+            "name": "PLC_PRG::INPUT10_1",
+            "num": 1,
+            "type": "BOOL"
+        },
+        {
+            "access": "",
+            "location": 10,
+            "name": "PLC_PRG::INPUT10",
+            "num": 1,
+            "type": "BYTE"
+        },
+        {
+            "access": "",
+            "location": 12,
+            "name": "PLC_PRG::INPUTS",
+            "num": 1,
+            "type": "BYTE"
+        }
+    ],
+    "output": [
+        {
+            "access": "",
+            "location": 0,
+            "name": "PLC_PRG::t0",
+            "num": 1,
+            "type": "WORD"
+        },
+        {
+            "access": "",
+            "location": 2,
+            "name": "PLC_PRG::t1",
+            "num": 1,
+            "type": "DWORD"
+        },
+        {
+            "access": "",
+            "location": 6,
+            "name": "PLC_PRG::t2",
+            "num": 1,
+            "type": "DWORD"
+        },
+        {
+            "access": "",
+            "location": 10,
+            "name": "PLC_PRG::OUTPUT10",
+            "num": 1,
+            "type": "BYTE"
+        },
+        {
+            "access": "",
+            "location": 11,
+            "name": "PLC_PRG::OUTPUT11",
+            "num": 1,
+            "type": "BYTE"
+        },
+        {
+            "access": "",
+            "location": 12,
+            "name": "PLC_PRG::OUTPUTS",
+            "num": 1,
+            "type": "BYTE"
+        },
+        {
+            "access": "",
+            "location": 20,
+            "name": "PLC_PRG::ERR_CNT",
+            "num": 1,
+            "type": "WORD"
+        }
+    ]
+}
