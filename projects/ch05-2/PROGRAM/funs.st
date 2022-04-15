@@ -12,6 +12,7 @@ FUNCTION func_sum_factorial : INT       (* 函数功能： 阶乘之和: 1!+2!+.
         sum := sum + func_factorial(x); (* 函数间调用 *)
     END_FOR;
 
+    (* 设置函数返回值 *)
     func_sum_factorial := sum;
 END_FUNCTION
 
@@ -26,6 +27,7 @@ FUNCTION func_factorial : INT           (* 函数功能： 求n的阶乘 !n *)
         sum := sum*x;
     END_FOR;
     
+    (* 设置函数返回值 *)
     func_factorial := sum;
 END_FUNCTION
 
@@ -41,5 +43,6 @@ FUNCTION func_sum_array : INT           (* 函数功能： 求数组之和 *)
         END_IF;
     END_FOR;    
 
+    (* 设置函数返回值 *)
     func_sum_array := sum;
 END_FUNCTION
