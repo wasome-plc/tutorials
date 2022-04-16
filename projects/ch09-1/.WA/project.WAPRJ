@@ -1,0 +1,9 @@
+{
+    "name": "ch09-1",
+    "version": "0.0.1",
+    "description": "DS 402 servo driver example",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1650112645364
+}
