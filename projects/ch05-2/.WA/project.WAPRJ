@@ -1,0 +1,12 @@
+{
+    "name": "ch05-2",
+    "version": "0.0.1",
+    "description": "演示ST程序中: 数组变量、 结构类型、 函数、 功能块等的定义与用法 ",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1649917491341,
+    "excludes": [
+        "arrays.st"
+    ]
+}

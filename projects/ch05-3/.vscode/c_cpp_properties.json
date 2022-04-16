@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/softplc/.iec_compiler/headers/**"
+            ]
+        }
+    ],
+    "version": 4
+}
