@@ -3,27 +3,6 @@
     "input": [
         {
             "access": "",
-            "location": 0,
-            "name": "PLC_PRG::x0",
-            "num": 1,
-            "type": "WORD"
-        },
-        {
-            "access": "",
-            "location": 2,
-            "name": "PLC_PRG::x1",
-            "num": 1,
-            "type": "DWORD"
-        },
-        {
-            "access": "",
-            "location": 6,
-            "name": "PLC_PRG::x2",
-            "num": 1,
-            "type": "DWORD"
-        },
-        {
-            "access": "",
             "location": 10,
             "name": "PLC_PRG::INPUT10_0",
             "num": 1,
@@ -53,27 +32,6 @@
         }
     ],
     "output": [
-        {
-            "access": "",
-            "location": 0,
-            "name": "PLC_PRG::t0",
-            "num": 1,
-            "type": "WORD"
-        },
-        {
-            "access": "",
-            "location": 2,
-            "name": "PLC_PRG::t1",
-            "num": 1,
-            "type": "DWORD"
-        },
-        {
-            "access": "",
-            "location": 6,
-            "name": "PLC_PRG::t2",
-            "num": 1,
-            "type": "DWORD"
-        },
         {
             "access": "",
             "location": 10,
