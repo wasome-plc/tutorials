@@ -1,122 +1,87 @@
 {
-    "settings": {
+    "settings":
+    {
         "default_interval_us": 200000
     },
-    "input": [
+    "input":
+    [
         {
-            "location": 1,
-            "type": "BOOL",
-            "prot": "mb",
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/86?fc=3",
-            "ioAddress": ""
-        },
-        {
-            "access": "",
             "location": 0,
-            "name": "PLC_PRG::x0",
-            "num": 1,
-            "type": "WORD",
-            "variable": "PLC_PRG::x0",
-            "ioAddress": "%IW0"
+            "type": "INT",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/1"
         },
         {
-            "access": "",
             "location": 2,
-            "name": "PLC_PRG::x1",
-            "num": 1,
-            "type": "DWORD",
-            "variable": "PLC_PRG::x1",
-            "ioAddress": "%ID2"
+            "type": "DINT",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/2?coding=iabcd"
         },
         {
-            "access": "",
             "location": 6,
-            "name": "PLC_PRG::x2",
-            "num": 1,
-            "type": "DWORD",
-            "variable": "PLC_PRG::x2",
-            "ioAddress": "%ID6"
+            "type": "REAL",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/4?coding=abcd"
         },
         {
-            "access": "",
             "location": 10,
-            "name": "PLC_PRG::INPUT10_0",
-            "num": 1,
             "type": "BOOL",
-            "variable": "PLC_PRG::INPUT10_0, PLC_PRG::INPUT10_1",
-            "ioAddress": ""
+            "bit" : 0,
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=1"
         },
         {
-            "access": "",
+            "location": 10,
+            "type": "BOOL",
+            "bit" : 1,
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/11?fc=1"
+        },
+        {
             "location": 12,
-            "name": "PLC_PRG::INPUTS",
-            "num": 1,
-            "type": "BYTE",
-            "variable": "PLC_PRG::INPUTS",
-            "ioAddress": "%IB12"
-        },
-        {
-            "location": 3,
-            "type": "BYTE",
-            "access": ""
+            "type": "SINT",
+            "num" :  3,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=1&items=3"
         }
     ],
-    "output": [
+    "output":
+    [
         {
-            "access": "",
             "location": 0,
-            "name": "PLC_PRG::t0",
-            "num": 1,
-            "type": "WORD",
-            "variable": "PLC_PRG::t0"
+            "type": "INT",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/100"
         },
         {
-            "access": "",
             "location": 2,
-            "name": "PLC_PRG::t1",
-            "num": 1,
-            "type": "DWORD",
-            "variable": "PLC_PRG::t1"
+            "type": "DINT",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/101?fc=16&coding=iabcd"
         },
         {
-            "access": "",
             "location": 6,
-            "name": "PLC_PRG::t2",
-            "num": 1,
-            "type": "DWORD",
-            "variable": "PLC_PRG::t2"
+            "type": "REAL",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/103?fc=16&coding=abcd"
         },
         {
-            "access": "",
             "location": 10,
-            "name": "PLC_PRG::OUTPUT10",
-            "num": 1,
             "type": "BYTE",
-            "variable": "PLC_PRG::OUTPUT10"
+            "num" :  2,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=5&items=2"
         },
         {
-            "access": "",
-            "location": 11,
-            "name": "PLC_PRG::OUTPUT11",
-            "num": 1,
-            "type": "BYTE",
-            "variable": "PLC_PRG::OUTPUT11"
-        },
-        {
-            "access": "",
             "location": 12,
-            "name": "PLC_PRG::OUTPUTS",
-            "num": 1,
             "type": "BYTE",
-            "variable": "PLC_PRG::OUTPUTS"
+            "num" :  3,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=5&items=3"
         },
         {
-            "access": "",
             "location": 20,
-            "name": "PLC_PRG::ERR_CNT",
-            "num": 1,
-            "type": "WORD",
-            "variable": "PLC_PRG::ERR_CNT"
+            "type": "INT",
+            "num" :  1,
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/20"
         }
     ]
 }
+
