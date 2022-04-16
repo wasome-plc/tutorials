@@ -4,26 +4,33 @@
     },
     "input": [
         {
-            "location": 0,
+            "location": null,
             "type": "INT",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/1"
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/1",
+            "global_name": "x0"
         },
         {
-            "location": 2,
+            "location": null,
             "type": "DINT",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/2?coding=iabcd"
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/2?coding=iabcd",
+            "global_name": "x1"
         },
         {
-            "location": 6,
+            "location": null,
             "type": "REAL",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/4?coding=abcd"
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/4?coding=abcd",
+            "global_name": "x2"
         },
         {
             "location": 10,
             "type": "BOOL",
+            "prot": "mb",
             "bit": 0,
             "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=1"
@@ -31,12 +38,14 @@
         {
             "location": 10,
             "type": "BOOL",
+            "prot": "mb",
             "bit": 1,
             "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/11?fc=1"
         },
         {
             "location": 12,
+            "prot": "mb",
             "type": "SINT",
             "num": 3,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=1&items=3"
@@ -44,40 +53,57 @@
     ],
     "output": [
         {
-            "location": 0,
+            "location": null,
             "type": "INT",
+            "prot": "mb",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/100"
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/100",
+            "global_name": "t0"
         },
         {
-            "location": 2,
+            "location": null,
             "type": "DINT",
+            "prot": "mb",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/101?fc=16&coding=iabcd"
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/101?fc=16&coding=iabcd",
+            "global_name": "t1"
         },
         {
-            "location": 6,
+            "location": null,
             "type": "REAL",
+            "prot": "mb",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/103?fc=16&coding=abcd"
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/103?fc=16&coding=abcd",
+            "global_name": "t2"
         },
         {
             "location": 10,
             "type": "BYTE",
+            "prot": "mb",
             "num": 2,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=5&items=2"
         },
         {
             "location": 12,
             "type": "BYTE",
+            "prot": "mb",
             "num": 3,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=5&items=3"
         },
         {
             "location": 20,
             "type": "INT",
+            "prot": "mb",
             "num": 1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/20"
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/20",
+            "global_name": ""
+        },
+        {
+            "access": "",
+            "location": 11,
+            "name": "PLC_PRG::OUTPUT11",
+            "num": 1,
+            "type": "BYTE"
         }
     ]
 }
