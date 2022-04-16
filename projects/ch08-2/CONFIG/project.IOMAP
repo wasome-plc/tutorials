@@ -1,87 +1,83 @@
 {
-    "settings":
-    {
+    "settings": {
         "default_interval_us": 200000
     },
-    "input":
-    [
+    "input": [
         {
             "location": 0,
             "type": "INT",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/1"
         },
         {
             "location": 2,
             "type": "DINT",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/2?coding=iabcd"
         },
         {
             "location": 6,
             "type": "REAL",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/4?coding=abcd"
         },
         {
             "location": 10,
             "type": "BOOL",
-            "bit" : 0,
-            "num" :  1,
+            "bit": 0,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=1"
         },
         {
             "location": 10,
             "type": "BOOL",
-            "bit" : 1,
-            "num" :  1,
+            "bit": 1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/11?fc=1"
         },
         {
             "location": 12,
             "type": "SINT",
-            "num" :  3,
+            "num": 3,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=1&items=3"
         }
     ],
-    "output":
-    [
+    "output": [
         {
             "location": 0,
             "type": "INT",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/100"
         },
         {
             "location": 2,
             "type": "DINT",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/101?fc=16&coding=iabcd"
         },
         {
             "location": 6,
             "type": "REAL",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/103?fc=16&coding=abcd"
         },
         {
             "location": 10,
             "type": "BYTE",
-            "num" :  2,
+            "num": 2,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=5&items=2"
         },
         {
             "location": 12,
             "type": "BYTE",
-            "num" :  3,
+            "num": 3,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=5&items=3"
         },
         {
             "location": 20,
             "type": "INT",
-            "num" :  1,
+            "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/20"
         }
     ]
 }
-
