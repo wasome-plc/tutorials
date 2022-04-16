@@ -11,9 +11,7 @@
         "SR",
         "TOF",
         "TON",
-        "TP",
-        "fb",
-        "fb2"
+        "TP"
     ],
     "functions": [
         "ERROR",
