@@ -2,8 +2,14 @@
     "targets": [
         {
             "host": "simulator",
+            "isOnline": true,
+            "isDefault": false,
+            "skipScan": false
+        },
+        {
+            "host": "192.168.10.155",
             "isOnline": false,
-            "isDefault": true
+            "isDefault": false
         }
     ]
 }

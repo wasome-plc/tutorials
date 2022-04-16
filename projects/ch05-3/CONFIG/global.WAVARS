@@ -1,0 +1,13 @@
+[
+    {
+        "date": "",
+        "name": "g_var_config",
+        "type": "INT",
+        "feature": "RETAIN",
+        "category": "VAR_GLOBAL",
+        "init": "1",
+        "comment": "",
+        "location": "",
+        "row_index": 0
+    }
+]
