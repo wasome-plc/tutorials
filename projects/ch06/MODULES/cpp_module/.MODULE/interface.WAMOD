@@ -1,0 +1,33 @@
+{
+    "namespace": "cpp_module",
+    "vendor": "WaSome Intelligence Technology",
+    "version": "1.0.0",
+    "category": "binary",
+    "language": "C/C++",
+    "debug": false,
+    "servo_drv": false,
+    "description": "使用C++开发的module",
+    "elements": {
+        "POUs": [
+            {
+                "name": "cpp_counter",
+                "type": "FB",
+                "ret_type": "",
+                "class": "C++",
+                "var_decls": [
+                    {
+                        "name": "IN",
+                        "type": "DINT",
+                        "keyword": "VAR_INPUT"
+                    },
+                    {
+                        "name": "CNT",
+                        "type": "DINT",
+                        "keyword": "VAR_OUTPUT"
+                    }
+                ]
+            }
+        ],
+        "datatypes": []
+    }
+}
