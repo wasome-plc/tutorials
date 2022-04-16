@@ -1,0 +1,67 @@
+{
+	"driver_name": "SimpleDS402",
+	"vendor": "WaSome Intelligence Technology",
+	"version": "1.0.0",
+	"release_date": "2022-1-10",
+	"servos": [{
+		"type": "SimpleDS402",
+		"product_ids": [],
+		"protocols": ["ethercat", "canopen"],
+		"registers_in": [{
+				"regname": "R6041_status",
+				"iomap_offset": 0,
+				"data_type": "INT",
+				"od": {
+					"index": 24641,
+					"subindex": 0
+				}
+			},
+			{
+				"regname": "R6064_actual_pos",
+				"iomap_offset": 2,
+				"data_type": "DINT",
+				"od": {
+					"index": 24676,
+					"subindex": 0
+				}
+			}
+		],
+		"registers_out": [{
+				"regname": "R6040_control_word",
+				"iomap_offset": 0,
+				"data_type": "INT",
+				"od": {
+					"index": 24640,
+					"subindex": 0
+				}
+			},
+			{
+				"regname": "R607a_target_pos",
+				"iomap_offset": 2,
+				"data_type": "DINT",
+				"od": {
+					"index": 24698,
+					"subindex": 0
+				}
+			},
+			{
+				"regname": "R6060_modesel",
+				"iomap_offset": 6,
+				"data_type": "SINT",
+				"od": {
+					"index": 24672,
+					"subindex": 0
+				}
+			},
+			{
+				"regname": "R60ff_target_vel",
+				"iomap_offset": 8,
+				"data_type": "DINT",
+				"od": {
+					"index": 24831,
+					"subindex": 0
+				}
+			}
+		]
+	}]
+}
