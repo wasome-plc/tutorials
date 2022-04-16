@@ -1,0 +1,9 @@
+{
+    "name": "ch08-3",
+    "version": "0.0.1",
+    "description": "ethercat example",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1650068472008
+}
