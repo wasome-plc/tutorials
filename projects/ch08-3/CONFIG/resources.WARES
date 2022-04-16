@@ -1,0 +1,24 @@
+[
+    {
+        "name": "configuration0",
+        "resources": [
+            {
+                "name": "res0",
+                "programs": [
+                    {
+                        "name": "instance1",
+                        "task": "task0",
+                        "type": "PLC_PRG"
+                    }
+                ],
+                "tasks": [
+                    {
+                        "interval": 100,
+                        "name": "task0",
+                        "priority": 1
+                    }
+                ]
+            }
+        ]
+    }
+]
