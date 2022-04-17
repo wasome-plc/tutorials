@@ -1,7 +1,7 @@
 {
     "name": "ch05-3",
     "version": "0.0.1",
-    "description": "chapter 05 example",
+    "description": "global variable and configuration examples",
     "category": "application",
     "template": "",
     "vsc": true,
