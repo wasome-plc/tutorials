@@ -1,4 +1,4 @@
-# chapter 8-2, 通过MODBUS控制示例
+# 通过MODBUS控制示例
 
 ## 测试程序 (modbus_test.py)
 测试内容：
@@ -84,54 +84,7 @@ t1 = x1 -1
   - x2 = 65535.56
   - t2 = x2 
 
-
-## 3 BOOL
-测试：
-- MB的COIL操作，和ST的BOOL变量的映射， IO MAP的`bit`字段
-- 对于同一个INPUT位置按照BIT和字节的映射到不同的ST变量
-
-输入：
-
-```
-        INPUT10_0 AT %IX10.0: BOOL;
-        INPUT10_1 AT %IX10.1: BOOL;
-        INPUT10  AT %IB10: BYTE;
-
-        {
-            "location": 10,
-            "type": "BOOL",
-            "bit" : 0,
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=1"
-        },
-        {
-            "location": 10,
-            "type": "BOOL",
-            "bit" : 1,
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/11?fc=1"
-        },
-
-```
-
-输出：
-```
-        OUTPUT10  AT %IQ10: BYTE;
-        OUTPUT11  AT %IQ11: BYTE;
-        {
-            "location": 10,
-            "type": "BYTE",
-            "num" :  2,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=5&items=2"
-        },
-```
-
-验证：
-- 通过ST变量OUTPUT10/OUTPUT11 对MB的COIL 10/11进行设置
-- 验证ST的输入变量等于之前OUTPUT内容
-- 验证INPUT10和INPUT10_0/INPUT10_1为相同内存上的不同解读
-
-## 4 BYTE[], num>1
+## 3 BYTE[], num>1
 
 - ST字节数组对应到多个IO连续的地址
 - 测试`num` = 3
