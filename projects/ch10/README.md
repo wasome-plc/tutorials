@@ -3,15 +3,15 @@
 本例程演示如何通过coap或http接口访问PLC中的内存区域，主要包含如下内容：
 1. PROGRAM/main.st
 
-    使用ST语言编写的PLC程序，读写IO和共享内存区域
+    使用ST语言编写的PLC程序，读写IO和M内存区域
 
 2. tools/memory_access.py
 
-    python脚本实现的“上位机”程序，通过coap接口访问PLC的IO和共享内存区域
+    python脚本实现的“上位机”程序，通过coap接口访问PLC的IO和M内存区域
 
 3. tools/plc_mem_interface.postman_collection.json
 
-    postman工程文件，通过http接口访问PLC的IO和共享内存区域
+    postman工程文件，通过http接口访问PLC的IO和M内存区域
 
 ## 依赖
 
