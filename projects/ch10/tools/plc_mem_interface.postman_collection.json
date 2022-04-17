@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "80a8c98a-9268-4043-b7d7-0972dfa7f7e4",
+		"name": "plc_mem_interface",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "read_2_byte_from_input",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/sys/proxy/coap/8908/iomem?plc=test&io=i&begin=0&num=2&type=BYTE",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"sys",
+						"proxy",
+						"coap",
+						"8908",
+						"iomem"
+					],
+					"query": [
+						{
+							"key": "plc",
+							"value": "test",
+							"description": "PLC名称"
+						},
+						{
+							"key": "io",
+							"value": "i",
+							"description": "访问区域，i - input，o - output，m - shared"
+						},
+						{
+							"key": "begin",
+							"value": "0",
+							"description": "访问起始地址"
+						},
+						{
+							"key": "num",
+							"value": "2",
+							"description": "访问数据个数"
+						},
+						{
+							"key": "type",
+							"value": "BYTE",
+							"description": "访问数据类型"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "write_2_byte_to_shared_mem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    12, 34\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/sys/proxy/coap/8908/iomem?plc=test&io=m&begin=0&num=2&type=BYTE",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"sys",
+						"proxy",
+						"coap",
+						"8908",
+						"iomem"
+					],
+					"query": [
+						{
+							"key": "plc",
+							"value": "test",
+							"description": "PLC名称"
+						},
+						{
+							"key": "io",
+							"value": "m",
+							"description": "访问区域，i - input，o - output，m - shared"
+						},
+						{
+							"key": "begin",
+							"value": "0",
+							"description": "访问起始地址"
+						},
+						{
+							"key": "num",
+							"value": "2",
+							"description": "访问数据个数"
+						},
+						{
+							"key": "type",
+							"value": "BYTE",
+							"description": "访问数据类型"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_2_byte_back_from_shm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/sys/proxy/coap/8908/iomem?plc=test&io=m&begin=0&num=2&type=BYTE",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"sys",
+						"proxy",
+						"coap",
+						"8908",
+						"iomem"
+					],
+					"query": [
+						{
+							"key": "plc",
+							"value": "test",
+							"description": "PLC名称"
+						},
+						{
+							"key": "io",
+							"value": "m",
+							"description": "访问区域，i - input，o - output，m - shared"
+						},
+						{
+							"key": "begin",
+							"value": "0",
+							"description": "访问起始地址"
+						},
+						{
+							"key": "num",
+							"value": "2",
+							"description": "访问数据个数"
+						},
+						{
+							"key": "type",
+							"value": "BYTE",
+							"description": "访问数据类型"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read_50_bytes_in_output",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/sys/proxy/coap/8908/iomem?plc=test&io=o&begin=100&num=50&type=BYTE",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"sys",
+						"proxy",
+						"coap",
+						"8908",
+						"iomem"
+					],
+					"query": [
+						{
+							"key": "plc",
+							"value": "test",
+							"description": "PLC名称"
+						},
+						{
+							"key": "io",
+							"value": "o",
+							"description": "访问区域，i - input，o - output，m - shared"
+						},
+						{
+							"key": "begin",
+							"value": "100",
+							"description": "访问起始地址"
+						},
+						{
+							"key": "num",
+							"value": "50",
+							"description": "访问数据个数"
+						},
+						{
+							"key": "type",
+							"value": "BYTE",
+							"description": "访问数据类型"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
