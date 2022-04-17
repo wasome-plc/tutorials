@@ -1,0 +1,22 @@
+{
+    "name": "ch08-1",
+    "version": "0.0.1",
+    "description": "PLCOpen motion control",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1650153834817,
+    "motion_control": true,
+    "global_modules": [
+        {
+            "name": "plcopen_mc_part1",
+            "version": "1.0.0",
+            "description": "system default module for motion control"
+        },
+        {
+            "name": "DS402",
+            "version": "1.0.0",
+            "description": "Servo driver for DS402"
+        }
+    ]
+}

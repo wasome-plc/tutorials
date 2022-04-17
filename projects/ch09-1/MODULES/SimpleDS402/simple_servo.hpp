@@ -53,13 +53,13 @@ public:
   virtual int32_t vel(void) override;
   virtual int32_t pos(void) override;
   virtual void runCycle(double freq) override;
+  virtual void initialize() override;
 
   void setMode(uint8_t mode)
   { 
     mode_ = mode;
   }
 
-virtual void initialize() override;
     
 private:
 

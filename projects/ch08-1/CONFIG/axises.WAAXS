@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Axis1",
+        "servo_type": "DS402",
+        "driver_ver": "1.0.0",
+        "IO_input_size": 6,
+        "IO_input_addr": 1000,
+        "IO_output_size": 12,
+        "IO_output_addr": 1000,
+        "setting": {},
+        "address": {
+            "protocol": "ethercat",
+            "master": 0,
+            "slave": 20
+        }
+    }
+]
