@@ -1,0 +1,21 @@
+{
+    "namespace": "SimpleDS402",
+    "vendor": "Wasome Corp",
+    "version": "0.0.1",
+    "category": "source",
+    "language": "C/C++",
+    "debug": true,
+    "servo_drv": true,
+    "description": "Simple DS402 servo driver example",
+    "elements": {
+        "POUs": [
+            {
+                "name": "mc_servo_new_SimpleDS402",
+                "type": "FUNC",
+                "ret_type": "DINT",
+                "var_decls": []
+            }
+        ],
+        "datatypes": []
+    }
+}

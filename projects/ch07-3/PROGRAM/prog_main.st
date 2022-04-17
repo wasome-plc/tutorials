@@ -43,15 +43,4 @@ PROGRAM PLC_PRG
           Reg_60ff_target_vel := target_vel;
           Reg_6040_control_word := 16#001F;
       END_IF;
-
-      
-
 END_PROGRAM
-
-CONFIGURATION configuration0
-
-    RESOURCE res0 ON PLC
-        TASK task0(INTERVAL := T#10ms, PRIORITY := 1);
-        PROGRAM instance1 WITH task0 : PLC_PRG;
-    END_RESOURCE
-END_CONFIGURATION

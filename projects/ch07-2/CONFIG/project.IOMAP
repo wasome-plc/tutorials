@@ -77,13 +77,6 @@
             "global_name": "t2"
         },
         {
-            "location": 10,
-            "type": "BYTE",
-            "prot": "mb",
-            "num": 2,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=5&items=2"
-        },
-        {
             "location": 12,
             "type": "BYTE",
             "prot": "mb",
@@ -97,13 +90,6 @@
             "num": 1,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/20",
             "global_name": ""
-        },
-        {
-            "access": "",
-            "location": 11,
-            "name": "PLC_PRG::OUTPUT11",
-            "num": 1,
-            "type": "BYTE"
         }
     ]
 }
