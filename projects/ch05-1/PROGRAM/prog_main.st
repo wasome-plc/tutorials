@@ -23,9 +23,7 @@ END_VAR
 END_PROGRAM
 
 
-/// *****************
 (** 使用IF ELSE 语句将INT转换为BOOL *)
-/// *****************
 FUNCTION convertToBOOL : BOOL
     VAR_INPUT level: INT; END_VAR
     IF level > 10 THEN
@@ -37,9 +35,7 @@ FUNCTION convertToBOOL : BOOL
     END_IF;
 END_FUNCTION
 
-/// *****************
 (** 使用CASE选择语句将DINT转换为SINT *)
-/// *****************
 FUNCTION convertToSINT : SINT
     VAR_INPUT level: DINT; END_VAR
     VAR ret: SINT; END_VAR
@@ -52,9 +48,7 @@ FUNCTION convertToSINT : SINT
     convertToSINT := ret;        
 END_FUNCTION
 
-// /// *****************
 // (** 使用for循环语句计算1+...+n *)
-// /// *****************
 FUNCTION getSumWithFor : DINT
     VAR_INPUT n: SINT; END_VAR
     VAR i: SINT; sum: DINT := 0; END_VAR
@@ -66,9 +60,7 @@ FUNCTION getSumWithFor : DINT
 END_FUNCTION
 
 
-// /// *****************
 // (**  使用while循环语句计算1+...+n  *)
-// /// *****************
 FUNCTION getSumWithWhile : DINT
     VAR_INPUT n: SINT; END_VAR
     VAR 
