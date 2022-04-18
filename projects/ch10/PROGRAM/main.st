@@ -8,16 +8,16 @@ PROGRAM PLC_PRG
         x2 AT %ID6 : REAL;  (* x2 在输入区的第6字节，占32bit *)
         t2 AT %QD6 : REAL;  (* t2 在输出区的第6字节，占32bit *)
 
-        m_byte   AT %MB100 : BYTE;  (* m_byte 在共享区的第100字节，占8bit *)
-        m_word   AT %MW110 : WORD;  (* m_word 在共享区的第110字节，占16bit *)
-        m_dword  AT %MD120 : DWORD; (* m_dword 在共享区的第120字节，占32bit *)
-        m_lword  AT %ML130 : LWORD; (* m_lword 在共享区的第130字节，占64bit *)
-        m_sint   AT %MB140 : SINT;  (* m_sint 在共享区的第140字节，占8bit *)
-        m_int    AT %MW150 : INT;   (* m_int 在共享区的第150字节，占16bit *)
-        m_dint   AT %MD160 : DINT;  (* m_dint 在共享区的第160字节，占32bit *)
-        m_lint   AT %ML170 : LINT;  (* m_lint 在共享区的第170字节，占64bit *)
-        m_real   AT %MD180 : REAL;  (* m_real 在共享区的第180字节，占32bit *)
-        m_lreal  AT %ML190 : LREAL; (* m_lreal 在共享区的第190字节，占64bit *)
+        m_byte   AT %MB100 : BYTE;  (* m_byte 在M区的第100字节，占8bit *)
+        m_word   AT %MW110 : WORD;  (* m_word 在M区的第110字节，占16bit *)
+        m_dword  AT %MD120 : DWORD; (* m_dword 在M区的第120字节，占32bit *)
+        m_lword  AT %ML130 : LWORD; (* m_lword 在M区的第130字节，占64bit *)
+        m_sint   AT %MB140 : SINT;  (* m_sint 在M区的第140字节，占8bit *)
+        m_int    AT %MW150 : INT;   (* m_int 在M区的第150字节，占16bit *)
+        m_dint   AT %MD160 : DINT;  (* m_dint 在M区的第160字节，占32bit *)
+        m_lint   AT %ML170 : LINT;  (* m_lint 在M区的第170字节，占64bit *)
+        m_real   AT %MD180 : REAL;  (* m_real 在M区的第180字节，占32bit *)
+        m_lreal  AT %ML190 : LREAL; (* m_lreal 在M区的第190字节，占64bit *)
     END_VAR
 
     (* 对输入区读取到的数据进行一定的运算后，写到输出区 *)
@@ -25,7 +25,7 @@ PROGRAM PLC_PRG
     t1 := x1 - 1;
     t2 := x2;
 
-    (* 向共享区的各变量写入固定的值，通过“上位机”读到的值应该和这些值一致 *)
+    (* 向M区的各变量写入固定的值，通过“上位机”读到的值应该和这些值一致 *)
     m_byte := 127;
     m_word := 12345;
     m_dword := 888888;
