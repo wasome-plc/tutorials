@@ -33,8 +33,8 @@ CONFIGURATION config_0
     (* 资源里的所有任务在一个CPU中运行 *)
     RESOURCE res0 ON PLC
         (* 可以定义不同优先级和周期的多个任务 *)
-        TASK task1(INTERVAL := T#1ms, PRIORITY := 1);
-        TASK task2(INTERVAL := T#100ms, PRIORITY := 5);
+        TASK task1(INTERVAL := T#100ms, PRIORITY := 1);
+        TASK task2(INTERVAL := T#1000ms, PRIORITY := 5);
 
         (* 将不同的POU按照不同的任务配置来运行 *)
         PROGRAM instance1 WITH task1 : PLC_PRG1;

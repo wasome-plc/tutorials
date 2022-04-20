@@ -8,12 +8,19 @@ FUNCTION func_sum_factorial : INT       (* 函数功能： 阶乘之和: 1!+2!+.
         sum: INT := 0;
     END_VAR
 
+    IF n < 1 THEN
+        func_sum_factorial := 0;
+        return;
+    END_IF;
+    
+
     FOR x := 1 TO n DO
         sum := sum + func_factorial(x); (* 函数间调用 *)
     END_FOR;
 
     (* 设置函数返回值 *)
     func_sum_factorial := sum;
+    WA_LOG('1!+2!+...%d!=%d', n, sum);
 END_FUNCTION
 
 FUNCTION func_factorial : INT           (* 函数功能： 求n的阶乘 !n *)
@@ -29,6 +36,7 @@ FUNCTION func_factorial : INT           (* 函数功能： 求n的阶乘 !n *)
     
     (* 设置函数返回值 *)
     func_factorial := sum;
+    // WA_LOG('%d!=%d', n, sum);
 END_FUNCTION
 
 FUNCTION func_sum_array : INT           (* 函数功能： 求数组之和 *)
