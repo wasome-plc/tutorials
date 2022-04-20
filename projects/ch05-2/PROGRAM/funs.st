@@ -1,11 +1,11 @@
 (* 多个函数可以定义在同一个文件中， 函数可以调用函数 *)
 
-FUNCTION func_sum_factorial : INT       (* 函数功能： 阶乘之和: 1!+2!+...+n! *)
-    VAR_INPUT n: SINT; END_VAR
+FUNCTION func_sum_factorial : DINT       (* 函数功能： 阶乘之和: 1!+2!+...+n! *)
+    VAR_INPUT n: INT; END_VAR
 
     VAR
-        x: SINT;  
-        sum: INT := 0;
+        x: INT;  
+        sum: DINT := 0;
     END_VAR
 
     IF n < 1 THEN
@@ -23,11 +23,11 @@ FUNCTION func_sum_factorial : INT       (* 函数功能： 阶乘之和: 1!+2!+.
     WA_LOG('1!+2!+...%d!=%d', n, sum);
 END_FUNCTION
 
-FUNCTION func_factorial : INT           (* 函数功能： 求n的阶乘 !n *)
-    VAR_INPUT n: SINT; END_VAR
+FUNCTION func_factorial : DINT           (* 函数功能： 求n的阶乘 !n *)
+    VAR_INPUT n: INT; END_VAR
 
     VAR
-        x: SINT; sum: INT := 1; 
+        x: INT; sum: DINT := 1; 
     END_VAR
 
     FOR x := 1 TO n DO
@@ -36,7 +36,7 @@ FUNCTION func_factorial : INT           (* 函数功能： 求n的阶乘 !n *)
     
     (* 设置函数返回值 *)
     func_factorial := sum;
-    // WA_LOG('%d!=%d', n, sum);
+    WA_LOG('%d!=%d', n, sum);
 END_FUNCTION
 
 FUNCTION func_sum_array : INT           (* 函数功能： 求数组之和 *)

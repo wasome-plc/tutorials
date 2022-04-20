@@ -4,7 +4,7 @@ FUNCTION_BLOCK fb_data_bank
 
         (* 功能块的输入: n, data*)
         VAR_INPUT
-            n: SINT; (*  *)
+            n: INT; (*  *)
             data: STRUCT_ENV_DATA;
         END_VAR
 
@@ -16,6 +16,6 @@ FUNCTION_BLOCK fb_data_bank
 
         (* 功能块的功能逻辑: 将输入data中的数据累加到money中， 将输入n做阶乘累加到num中 *)
         money := money + func_sum_array(data.env.temperatures);
-        num := num + func_sum_factorial(n);
+        num := func_factorial(n);
 
 END_FUNCTION_BLOCK
