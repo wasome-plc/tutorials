@@ -4,7 +4,7 @@ PROGRAM PLC_PRG
 VAR
     b: BOOL;         (**BOOL类型的变量定义*)
     n: INT := 10;    (*初始化为10*)
-    r: REAL := 1.2;
+    r: REAL := 5.2;
     s: SINT;
     d: ARRAY[0..2] OF DINT;      (*定义长度为3的一维数组*)
 END_VAR

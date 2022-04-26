@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/softplc/.iec_compiler/headers/**"
+                "~/.iec_compiler/headers/**"
             ]
         }
     ],

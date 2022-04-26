@@ -1,7 +1,7 @@
 {
     "name": "ch05-3",
     "version": "0.0.1",
-    "description": "global variable and configuration examples",
+    "description": "sample for global variable usage and configuration in ST file",
     "category": "application",
     "template": "",
     "vsc": true,
