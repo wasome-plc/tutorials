@@ -31,4 +31,14 @@
 
 修改配置后需要wa-plc-framework才能生效!
 
+### 注意： 汇川IS620N的配置！！！
+
+目前此设备从webconsole添加后导出的PDO没有包含必要的寄存器0x6060与0x60ff。需要进行如下操作之一：
+
+1. 复制Test-Devices/is620n目录的文件至/wa-plc/ethercat/config下。
+
+    然后从web-console中重启wa-plc-framework.
+
+2. 在WebConsole中在设备的SM2中手工添加寄存器0x6060与0x60ff
+
 
