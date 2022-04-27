@@ -1,9 +1,15 @@
 [
     {
-        "name": "configuration0",
+        "name": "_CONFIGURE_MANUAL_",
         "resources": [
             {
-                "name": "res0",
+                "tasks": [
+                    {
+                        "interval": 1000,
+                        "name": "task0",
+                        "priority": 1
+                    }
+                ],
                 "programs": [
                     {
                         "name": "instance1",
@@ -11,13 +17,7 @@
                         "type": "PLC_PRG"
                     }
                 ],
-                "tasks": [
-                    {
-                        "interval": 100,
-                        "name": "task0",
-                        "priority": 1
-                    }
-                ]
+                "name": "_RESOURCE_MANUAL_"
             }
         ]
     }

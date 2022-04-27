@@ -17,6 +17,9 @@ PROGRAM PLC_PRG
       Reg_60ff_target_vel := 0;
       Reg_6040_control_word := 0;
 
+      WA_LOG('Reg_6041_status = %d (0X%X)', Reg_6041_status, Reg_6041_status);
+      WA_LOG('Reg_6060_modesel = %d (0X%X)', Reg_6060_modesel, Reg_6060_modesel);
+
       IF Reg_6041_status = 16#218 THEN
           Reg_6040_control_word := 16#0080;
 
@@ -32,7 +35,7 @@ PROGRAM PLC_PRG
 
       ELSIF (Reg_6041_status AND 16#006F) = 16#0027  THEN
           cnt := cnt + 1;
-          IF cnt > 20 THEN
+          IF cnt > 10 THEN
               cnt := 0;
               IF target_vel = 0 THEN
                 target_vel := 16#1000000;
@@ -43,4 +46,6 @@ PROGRAM PLC_PRG
           Reg_60ff_target_vel := target_vel;
           Reg_6040_control_word := 16#001F;
       END_IF;
+
+      WA_LOG('Reg_6040_control_word = %d (0X%X)', Reg_6040_control_word, Reg_6040_control_word);
 END_PROGRAM

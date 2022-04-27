@@ -2,10 +2,10 @@
     {
         "date": "",
         "name": "g_num",
-        "type": "SINT",
+        "type": "INT",
         "feature": "",
         "category": "VAR_GLOBAL",
-        "init": "10",
+        "init": "1",
         "comment": "",
         "location": "",
         "row_index": 0
