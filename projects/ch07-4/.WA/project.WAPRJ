@@ -5,5 +5,8 @@
     "category": "application",
     "template": "",
     "vsc": true,
-    "lastOpenTime": 1651928549853
+    "lastOpenTime": 1651928549853,
+    "excludes": [
+        "VVV/GGG.st"
+    ]
 }

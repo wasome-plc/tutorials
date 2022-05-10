@@ -49,6 +49,19 @@
             "type": "SINT",
             "num": 3,
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=1&items=3"
+        },
+        {
+            "location": 1,
+            "type": "SINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=0&entry_index=5888&entry_subindex=0",
+            "global_name": "vvv"
+        },
+        {
+            "location": 2,
+            "type": "SINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=0&entry_index=5888&entry_subindex=0"
         }
     ],
     "output": [

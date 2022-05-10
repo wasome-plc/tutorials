@@ -1,1 +1,11 @@
-{}
+{
+    "input": [
+        {
+            "location": 1,
+            "type": "BOOL",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/86?fc=3"
+        }
+    ],
+    "output": []
+}

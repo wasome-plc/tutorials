@@ -14,4 +14,6 @@ PROGRAM PLC_PRG
     c_counter_inst(IN := 1, CNT => res1);
     cpp_counter_inst(IN := 1, CNT => res2);
     st_counter_inst(IN := 1, CNT => res3);
+
+    test();
 END_PROGRAM

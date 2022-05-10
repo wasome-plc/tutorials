@@ -1,1 +1,25 @@
-[]
+[
+    {
+        "name": "_CONFIGURE_MANUAL_",
+        "resources": [
+            {
+                "tasks": [
+                    {
+                        "name": "task1",
+                        "priority": 1,
+                        "interval": 1000
+                    }
+                ],
+                "programs": [
+                    {
+                        "seq": 1,
+                        "task": "task1",
+                        "type": "PLC_PRG",
+                        "name": "task1"
+                    }
+                ],
+                "name": "_RESOURCE_MANUAL_"
+            }
+        ]
+    }
+]

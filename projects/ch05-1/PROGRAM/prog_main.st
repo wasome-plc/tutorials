@@ -58,7 +58,7 @@ FUNCTION getSumWithFor : DINT
     END_FOR;
     getSumWithFor := sum;
 END_FUNCTION
-
+操作返回失败
 
 // (**  使用while循环语句计算1+...+n  *)
 FUNCTION getSumWithWhile : DINT

@@ -1,20 +1,31 @@
+(* control for ETHERCAT DM3E-556 SERVO *)
+(* Refer to the https://gitee.com/idrm-iot/ethercat_dm3e/blob/master/MotorControl.py *)
+
 
 FUNCTION EnableMotor : BOOL
-      EnableMotor := FALSE;
-      IF Reg_6041_status = 16#218 THEN
-          Reg_6040_control_word := 16#0080;
 
-      ELSIF (Reg_6041_status AND INT#16#004F) = INT#16#0040  THEN
+    EnableMotor := FALSE;
+    Reg_6040_control_word := 0;
+    Reg_6060_modesel := 0;
+    
+      IF (Reg_6041_status AND INT#16#0250) = INT#16#0250  THEN
           Reg_6040_control_word := 16#0006;
 
-      ELSIF (Reg_6041_status AND 16#006F) = 16#0021  THEN
+      ELSIF (Reg_6041_status AND 16#0237) = 16#0237  THEN
+          Reg_6040_control_word := 16#000F;
+          EnableMotor :=  TRUE;
+          Reg_6060_modesel := 8;
+
+      ELSIF (Reg_6041_status AND 16#0233) = 16#0233  THEN
+          Reg_6040_control_word := 16#000F;
+          Reg_6060_modesel := 8;
+
+      ELSIF (Reg_6041_status AND 16#0231) = 16#0231  THEN
           Reg_6040_control_word := 16#0007;
 
-      ELSIF (Reg_6041_status AND 16#006F) = 16#0023  THEN
-          Reg_6040_control_word := 16#000F;
-
-      ELSIF (Reg_6041_status AND 16#006F) = 16#0027  THEN
-          EnableMotor :=  TRUE;
+      ELSE
+       Reg_6040_control_word := 128;
+   
       END_IF;    
 
       RETURN;
@@ -32,7 +43,6 @@ FUNCTION ZeroPosition : BOOL
    Reg_6040_control_word := 16#001F;
 
    IF (Reg_6041_status AND 16#637) = 16#637  THEN
-
        ZeroPosition := TRUE;
     END_IF
 
@@ -46,15 +56,15 @@ VAR_INPUT
     moving_mode: BOOL := TRUE;
 END_VAR
     MotorTargetPosition := FALSE;
-    Reg_6060_modesel := 1;
+    Reg_6060_modesel := 8;
     target_position := position;
 
-   IF mode_display <> 1 THEN
+   IF mode_display <> 8 THEN
        RETURN ;
    END_IF;
 
   IF moving_mode THEN
-      Reg_6040_control_word := 16#00OF;
+      Reg_6040_control_word := 16#000F;
   ELSE
       Reg_6040_control_word := 16#004F;     
   END_IF;
@@ -75,11 +85,19 @@ PROGRAM PLC_PRG
 VAR
     Moved_Zero_Pos: BOOL := FALSE; (* Comment *)
     Moved_Target_Pos: BOOL := FALSE;
+    Enabled : BOOL := FALSE;
 END_VAR
-      WA_LOG('Reg_6041_status = %d (0X%X)', Reg_6041_status, Reg_6041_status);
-      WA_LOG('Reg_6060_modesel = %d (0X%X)', Reg_6060_modesel, Reg_6060_modesel);
+    WA_LOG('Reg_6041_status = %d (0X%X)', Reg_6041_status, Reg_6041_status);
+    WA_LOG('Reg_6060_modesel = %d (0X%X)', Reg_6060_modesel, Reg_6060_modesel);
+    WA_LOG('last_error = %d (0X%X)', last_error, last_error);
+    WA_LOG('mode_display = %d (0X%X)', mode_display, mode_display);
+    WA_LOG('slave_state = %d (0X%X)', slave_state, slave_state);
 
-      IF EnableMotor() THEN
+      IF NOT Enabled THEN
+          Enabled := EnableMotor();
+      END_IF
+
+      IF Enabled THEN
         IF NOT Moved_Zero_Pos THEN
             Moved_Zero_Pos := ZeroPosition();
         ELSIF NOT Moved_Target_Pos THEN
