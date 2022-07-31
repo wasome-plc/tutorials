@@ -30,7 +30,7 @@ PROGRAM PLC_PRG
           Reg_6040_control_word := 16#0007;
 
       ELSIF (Reg_6041_status AND 16#006F) = 16#0023  THEN
-          Reg_6060_modesel := 9;
+          Reg_6060_modesel := 8;
           Reg_6040_control_word := 16#000F;
 
       ELSIF (Reg_6041_status AND 16#006F) = 16#0027  THEN

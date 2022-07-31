@@ -1,0 +1,12 @@
+{
+    "name": "ch07-4",
+    "version": "0.0.1",
+    "description": "ETHERCAT DM3E-556 SERVO",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1651928549853,
+    "excludes": [
+        "VVV/GGG.st"
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "input": [
+        {
+            "location": null,
+            "type": "INT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24641&entry_subindex=0",
+            "global_name": "Reg_6041_status"
+        },
+        {
+            "location": null,
+            "type": "SINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6061&entry_subindex=0",
+            "global_name": "mode_display"
+        },
+        {
+            "location": null,
+            "type": "SINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6064&entry_subindex=0",
+            "global_name": "actual_pos"
+        },
+        {
+            "location": null,
+            "type": "INT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24761&entry_subindex=0",
+            "global_name": "touch_probe_status"
+        },
+        {
+            "location": null,
+            "type": "DINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x60ba&entry_subindex=0",
+            "global_name": "touch_probe_value"
+        },
+        {
+            "location": null,
+            "type": "DINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x60FD&entry_subindex=0",
+            "global_name": "digital_input"
+        },
+        {
+            "location": null,
+            "type": "INT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x603F&entry_subindex=0",
+            "global_name": "last_error"
+        },
+        {
+            "location": null,
+            "type": "DINT",
+            "prot": "ethcat2",
+            "access": "shm2://[ethercat]:5566/rg2?master=0&slave=20&regname=Slave_State",
+            "global_name": "slave_state"
+        }
+    ],
+    "output": [
+        {
+            "location": 1000,
+            "type": "INT",
+            "num": 1,
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24640&entry_subindex=0",
+            "global_name": "Reg_6040_control_word"
+        },
+        {
+            "location": 1002,
+            "type": "DINT",
+            "num": 1,
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x607A&entry_subindex=0",
+            "global_name": "target_position"
+        },
+        {
+            "location": 1006,
+            "type": "SINT",
+            "num": 1,
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6060&entry_subindex=0",
+            "global_name": "Reg_6060_modesel"
+        },
+        {
+            "location": 1008,
+            "type": "DINT",
+            "num": 1,
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x60FF&entry_subindex=0",
+            "global_name": "target_vel"
+        },
+        {
+            "location": null,
+            "type": "DINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6083&entry_subindex=0",
+            "global_name": "target_acc"
+        },
+        {
+            "location": null,
+            "type": "DINT",
+            "prot": "ethcat",
+            "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6084&entry_subindex=0",
+            "global_name": "target_dec"
+        }
+    ]
+}
