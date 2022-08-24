@@ -29,7 +29,7 @@
 
 ![](./doc/imgs/is620_sm2.png)
 
-0x1600:
+0x1600（SM2）:
 ```	
 24640 (0x6040)  控制字 x
 24698 (0x607a)  目标位置 x 
@@ -39,7 +39,7 @@
 24831 (0x60ff)  目标速度  x
 
 ```
-0x1a00：
+0x1a00 （SM3）：
 ```
 24639 (0x603f)
 24641 (0x6041) x
@@ -58,10 +58,15 @@
 
 目前此设备从webconsole添加后导出的PDO没有包含必要的寄存器0x6060与0x60ff。需要进行如下操作之一：
 
-1. 复制Test-Devices/is620n目录的文件至/wa-plc/ethercat/config下。
+- 执行以下命令，将复制Test-Devices/is620n目录的文件至/wa-plc/ethercat/config下。 
+```
+cd Test-Devices
+./install_cfg.sh
+```
 
-    然后从web-console中重启wa-plc-framework.
+- 在WebConsole中在设备上创建pdo 0x1600（SM2）与0x1a00（SM3），在读出来的基础上增加寄存器0x6060与0x60ff
 
-2. 在WebConsole中在设备的SM2中手工添加寄存器0x6060与0x60ff
+
+然后从web-console中重启wa-plc-framework.
 
 
