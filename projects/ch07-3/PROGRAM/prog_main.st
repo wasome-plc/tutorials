@@ -1,3 +1,58 @@
+/*
+static uint16_t coe_cia402_statemachine(uint16_t status)
+{
+    if ((status&0x4F) == 0x0) {		// Not ready to Switch on
+        return 0x80;
+    } else if ((status&0x4F) == 0x40) { // Switch on Disabled
+        return 0x6;
+    } else if ((status&0x6F) == 0x21) { // Ready to Switch on
+        return 0x7;
+    } else if ((status&0x6F) == 0x23) { // Switch on
+        return 0xF;
+    } else if ((status&0x6F) == 0x27) { // Operation enabled
+        return 0x1F;
+    } else if ((status&0x6F) == 0x07) { // Quick stop active
+        return 0x0;
+    } else if ((status&0x4F) == 0x0F) { // Fault reaction active
+        return 0x80;
+    } else if ((status&0x4F) == 0x08) { // Fault
+        return 0x80;
+    }
+    return 0x80;
+}
+*/
+
+FUNCTION GetControlWord : INT
+VAR_INPUT
+    status: INT;
+END_VAR
+VAR
+    control_word: INT := 16#0080; (* Comment *)
+END_VAR
+    IF (status AND INT#16#004F) = 16#0 THEN
+        control_word := 16#0080;
+    ELSIF (status AND INT#16#004F) = 16#40 THEN
+        control_word := 16#0006;
+    ELSIF (status AND INT#16#006F) = 16#21 THEN
+        control_word := 16#0007;
+    ELSIF (status AND INT#16#006F) = 16#23 THEN
+        control_word := 16#000F;
+    ELSIF (status AND INT#16#006F) = 16#27 THEN
+        control_word := 16#001F;
+    ELSIF (status AND INT#16#006F) = 16#07 THEN
+        control_word := 16#0000;
+    ELSIF (status AND INT#16#004F) = 16#0F THEN
+        control_word := 16#0080;
+    ELSIF (status AND INT#16#004F) = 16#08 THEN
+        control_word := 16#0080;
+    ELSE
+        control_word := 16#0080;
+    END_IF;
+
+    GetControlWord := control_word;
+
+END_FUNCTION
+
 PROGRAM PLC_PRG
     VAR
         Reg_6041_status AT %IW1000 : INT;
@@ -13,12 +68,20 @@ PROGRAM PLC_PRG
         cnt : INT := 0;
     END_VAR
 
+      //target_position := Reg_6064_actual_pos + 255;
+      //Reg_60ff_target_vel := 16#1000000;
+      //Reg_6040_control_word := 0;
+
+      WA_LOG('Reg_6041_status = %d (0X%X), act-pos=%d (0X%X)', Reg_6041_status, Reg_6041_status, Reg_6064_actual_pos, Reg_6064_actual_pos);
+
+      //Reg_6040_control_word := GetControlWord(Reg_6041_status);
+      //Reg_6060_modesel := 9;
+
+
       target_position := Reg_6064_actual_pos + 255;
       Reg_60ff_target_vel := 0;
       Reg_6040_control_word := 0;
-
-      WA_LOG('Reg_6041_status = %d (0X%X)', Reg_6041_status, Reg_6041_status);
-      WA_LOG('Reg_6060_modesel = %d (0X%X)', Reg_6060_modesel, Reg_6060_modesel);
+      Reg_60ff_target_vel := 16#1000000 (*target_vel*);
 
       IF Reg_6041_status = 16#218 THEN
           Reg_6040_control_word := 16#0080;
@@ -30,22 +93,17 @@ PROGRAM PLC_PRG
           Reg_6040_control_word := 16#0007;
 
       ELSIF (Reg_6041_status AND 16#006F) = 16#0023  THEN
-          Reg_6060_modesel := 8;
+          Reg_6060_modesel := 9;
           Reg_6040_control_word := 16#000F;
 
       ELSIF (Reg_6041_status AND 16#006F) = 16#0027  THEN
-          cnt := cnt + 1;
-          IF cnt > 10 THEN
-              cnt := 0;
-              IF target_vel = 0 THEN
-                target_vel := 16#1000000;
-              ELSE
-                target_vel := 0;
-              END_IF;
-          END_IF;
-          Reg_60ff_target_vel := target_vel;
+          Reg_60ff_target_vel := 16#1000000 (*target_vel*);
           Reg_6040_control_word := 16#001F;
       END_IF;
 
+      
+
+      WA_LOG('Reg_6060_modesel = %d (0X%X)', Reg_6060_modesel, Reg_6060_modesel);
       WA_LOG('Reg_6040_control_word = %d (0X%X)', Reg_6040_control_word, Reg_6040_control_word);
+      WA_LOG('Reg_60ff_target_vel = %d (0X%X) $n', Reg_60ff_target_vel, Reg_60ff_target_vel);
 END_PROGRAM
