@@ -5,16 +5,18 @@
             {
                 "tasks": [
                     {
-                        "interval": 1000,
+                        "interval": 100,
                         "name": "task0",
-                        "priority": 1
+                        "priority": 1,
+                        "row_index": 0
                     }
                 ],
                 "programs": [
                     {
                         "name": "instance1",
                         "task": "task0",
-                        "type": "PLC_PRG"
+                        "type": "PLC_PRG",
+                        "row_index": 0
                     }
                 ],
                 "name": "_RESOURCE_MANUAL_"
