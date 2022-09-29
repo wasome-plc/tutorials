@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
 # -*- coding: utf-8 -*-
-"""
-It is the entrance of the iagent test framework.
-
-"""
 
 import argparse
 import datetime
@@ -53,8 +49,7 @@ if __name__ == "__main__":
     bus_name = "bus-1"
 
     # Write values to modubs
-    #iagent_client = HelperClient(server=("127.0.0.1", 5683))
-    iagent_client = HelperClient(server=("192.168.0.131", 5683))
+    iagent_client = HelperClient(server=("127.0.0.1", 5683))
 
     data_in =   [[{'r':81, 'v':1}, {'r':82, 'v':1}, {'r':83, 'v':0}, {'r':84, 'v':0}], \
                  [{'r':81, 'v':1}, {'r':82, 'v':0}, {'r':83, 'v':1}, {'r':84, 'v':0}], \

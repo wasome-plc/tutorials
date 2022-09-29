@@ -6,7 +6,7 @@ Wasome WebIDE是一套现代的PLC编程开发IDE， 支持IEC61131-3编程语�
 -	快速入口
 -	IEC61131-3语言编程基础
 -	WasomeIDE系统函数库
--	使用编程语言开发最小项目
+-	使用IEC61131-3编程语言开发最小项目
 -	使用内部模块开发示例
 -	使用实际MODBUS, ETHERCAT设备开发示例
 -	开发基于PLCOpen运动控制
@@ -61,7 +61,7 @@ ST程序包含更多的语法：
 
 ### [进阶四](./projects/ch05-4)：
 
--	使用梯形图LD语言开发APP
+-	使用梯形图LD语言开发PLC应用
 
 
 ## Chapter 06:[使用内部模块开发示例](./projects/ch06)
