@@ -34,7 +34,7 @@ git clone https://github.com/wasome-plc/tutorials.git
 
 # 示例项目
 
-## Chapter 05:使用ST语言开发最小项目
+## Chapter 05:使用IEC61131-3语言开发最小项目
 在本章里我们将使用ST语言开发一个最小的PLC应用，这个应用不会使用到IO内存访问。这个例子用来练习ST语言的常用编程语法，包含三个进阶。
 
 ### [进阶一](./projects/ch05-1)：
