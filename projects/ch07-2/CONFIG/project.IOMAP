@@ -2,6 +2,7 @@
     "settings": {
         "default_interval_us": 200000
     },
+    "io_editor":{
     "input": [
         {
             "location": null,
@@ -105,4 +106,5 @@
             "global_name": ""
         }
     ]
+    }
 }
