@@ -1,0 +1,13 @@
+{
+    "name": "ch05-4",
+    "version": "0.0.1",
+    "description": "使用梯形图LD开发PLC APP",
+    "category": "application",
+    "template": "",
+    "vsc": false,
+    "lastOpenTime": 1663862400000,
+    "excludes": [],
+    "motion_control": false,
+    "global_modules": [
+    ]
+}

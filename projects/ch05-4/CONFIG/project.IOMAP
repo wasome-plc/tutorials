@@ -1,0 +1,77 @@
+{
+  "io_editor":{
+    "input": [
+        {
+            "location": 1,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/81?fc=3",
+            "row_index": 0,
+            "num": 1,
+            "global_name": "I00",
+            "name": "I00"
+        },
+        {
+            "location": 2,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/82?fc=3",
+            "row_index": 1,
+            "num": 1,
+            "global_name": "I10",
+            "name": "I10"
+        },
+        {
+            "location": 3,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/83?fc=3",
+            "row_index": 2,
+            "num": 1,
+            "global_name": "I20",
+            "name": "I20"
+        },
+        {
+            "location": 4,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/84?fc=3",
+            "row_index": 3,
+            "num": 1,
+            "global_name": "I30",
+            "name": "I30"
+        }
+    ],
+    "output": [
+        {
+            "location": 1,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/91?fc=3",
+            "row_index": 0,
+            "num": 1,
+            "global_name": "Q00",
+            "name": "Q00"
+        },
+        {
+            "location": 2,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/92?fc=3",
+            "row_index": 1,
+            "num": 1,
+            "global_name": "Q10",
+            "name": "Q10"
+        },
+        {
+            "location": 3,
+            "type": "BYTE",
+            "prot": "mb",
+            "access": "coap://127.0.0.1:5683/mb/bus-1/1/93?fc=3",
+            "row_index": 2,
+            "num": 1,
+            "global_name": "Q20"
+        }
+    ]
+  }
+}
