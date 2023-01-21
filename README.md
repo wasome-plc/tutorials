@@ -87,7 +87,13 @@ ST程序包含更多的语法：
 -	ST程序：使用读入的MODBUS数据，计算写入MODBUS的数据
 -	测试程序：python脚本将读写MODBUS寄存器用来验证ST程序的执行正确性
 
-### 7.3	[ETHERCAT使用示例](./projects/ch07-3)
+### 7.3	[ETHERCAT控制汇川伺服使用示例](./projects/ch07-3)
+通过CSV的方式控制伺服启动
+
+### 7.4	[ETHERCAT控制赛雷伺服使用示例](./projects/ch07-4)
+通过CSP的方式控制伺服启动
+
+伺服型号为：DM3E-556 SERVO
 
 ## Chapter 08: [开发基于PLCOpen运动控制](./projects/ch08-1)
 
