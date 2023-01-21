@@ -1,13 +1,13 @@
 {
     "network": {
         "ethercat_bus_num": 0,
-        "modbus_bus_num": 2,
+        "modbus_bus_num": 0,
         "redis_server_num": 0,
         "shared_mem_num": 0,
         "modbus_slaves": [
             {
                 "idx": "",
-                "bus_idx": "",
+                "bus_idx": -1,
                 "slave_ID": 0,
                 "desc": "",
                 "input_map": [
@@ -37,11 +37,11 @@
                     },
                     {
                         "reg": 1,
-                        "addr": 130,
+                        "addr": 80,
                         "items": 2,
                         "code": "",
                         "type": "SINT",
-                        "variable": "s1_fc1_130"
+                        "variable": "s1_fc1_80"
                     }
                 ],
                 "output_map": [],
@@ -49,7 +49,7 @@
             },
             {
                 "idx": "",
-                "bus_idx": "",
+                "bus_idx": -1,
                 "slave_ID": 2,
                 "desc": "MODBUS TCP",
                 "input_map": [],
@@ -80,11 +80,11 @@
                     },
                     {
                         "reg": 5,
-                        "addr": 130,
+                        "addr": 80,
                         "items": 2,
                         "code": "",
                         "type": "SINT",
-                        "variable": "s2_fc5_130"
+                        "variable": "s2_fc5_80"
                     }
                 ]
             }
