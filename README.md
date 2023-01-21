@@ -1,6 +1,6 @@
 # Wasome PLC编程指南
 
-Wasome WebIDE是一套现代的PLC编程开发IDE， 支持IEC61131-3编程语言，同时支持C、C++、Rust等多种计算机语言混合编程与调试。WasomeIDE基于最新的编程工具VSCODE开发， 提供功能丰富的编辑、编译、调试、模拟运行等功能。WasomeIDE目前支持在Ubuntu系统（18.04以上版本）上运行。
+Wasome WebIDE是一套现代的PLC编程开发IDE， 支持IEC61131-3编程语言，同时支持C、C++等多种计算机语言混合编程与调试。WasomeIDE基于最新的编程工具VSCODE开发， 提供功能丰富的编辑、编译、调试、模拟运行等功能。WasomeIDE目前支持在Ubuntu系统（18.04以上版本）上运行。
 
 本文档的目标为帮助使用者使用WasomeIDE开发PLC应用程序。文档内容包含以下主要的组成部分：
 -	快速入口
@@ -32,10 +32,13 @@ git clone https://github.com/wasome-plc/tutorials.git
 ## 打开示例项目
 从上图中点击任意项目打开
 
+或使用另外一种方式：
+- [从Ubuntu文件管理器中通过鼠标右键菜单打开PLC项目](./doc/open_project.md)
+
 # 示例项目
 
 ## Chapter 05:使用IEC61131-3语言开发最小项目
-在本章里我们将使用ST语言开发一个最小的PLC应用，这个应用不会使用到IO内存访问。这个例子用来练习ST语言的常用编程语法，包含三个进阶。
+在本章里我们将使用ST语言开发一个最小的PLC应用，这个应用不会使用到IO内存访问。这个例子用来练习ST和梯形图语言的常用编程语法，包含4个进阶。
 
 ### [进阶一](./projects/ch05-1)：
 
