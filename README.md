@@ -16,16 +16,14 @@ Wasome WebIDE是一套现代的PLC编程开发IDE， 支持IEC61131-3编程语�
 # 使用示例
 
 ## 准备
-
-下载本代码仓库到本地：
+安装好Wasome IDE，下载本代码仓库到本地：
 ```
 git clone https://github.com/wasome-plc/tutorials.git
 ```
 
-安装好Wasome IDE，并打开。
 
 ## 设置工作区
-在IDE中设置项目工作区到刚才下载代码仓库的目录下`projects`子目录：
+打开IDE，在IDE中设置项目工作区到刚才下载代码仓库的目录下`projects`子目录：  
 
 ![](./doc/imgs/workspace_path.png)
 
@@ -80,29 +78,28 @@ ST程序包含更多的语法：
 
 ## Chapter 07: 控制实际设备示例
 
-### 7.2	[MODBUS使用示例](./projects/ch07-2)
+### 7.2	使用MODBUS(服务)访问从站 [(进入)](./projects/ch07-2)
 
-本示例第一次展示配置IO表操作，用于通讯MODBUS从站。示例主要展示：
--	配置IO表：建立程序变量和MODBUS寄存器之间的映射关系
--	ST程序：使用读入的MODBUS数据，计算写入MODBUS的数据
--	测试程序：python脚本将读写MODBUS寄存器用来验证ST程序的执行正确性
+本示例展示使用`基础方式`配置IO表操作，用于通讯MODBUS从站。基础方式中用户可以手工规划IO内存的使用。  
 
-### 7.3	[ETHERCAT控制汇川伺服使用示例](./projects/ch07-3)
+### 7.3	ETHERCAT控制汇川伺服 [(进入)](./projects/ch07-3)
 通过CSV的方式控制伺服启动
 
-### 7.4	[ETHERCAT控制赛雷伺服使用示例](./projects/ch07-4)
-通过CSP的方式控制伺服启动
+### 7.4	ETHERCAT控制赛雷伺服 [(进入)](./projects/ch07-4)
+通过CSP的方式控制伺服启动。伺服型号为：DM3E-556 SERVO
 
-伺服型号为：DM3E-556 SERVO
+### 7.5	使用MODBUS(循环)访问从站 [(进入)](./projects/ch07-5)
 
-## Chapter 08: [开发基于PLCOpen运动控制](./projects/ch08-1)
+本示例展示使用`标准方式`配置IO网络以及从站寄存器，用于通讯MODBUS从站。标准方式中用户无需管理IO内存具体分配，所有的IO通道都使用一个全局变量来访问。  
+
+## Chapter 08: 开发基于PLCOpen运动控制 [(进入)](./projects/ch08-1)
 
 在第8章中我们展示了如何在一个PLCOpen的应用中使用伺服驱动.
 
-## Chapter 09: [开发伺服驱动](./projects/ch09-1)
+## Chapter 09: 开发伺服驱动 [(进入)](./projects/ch09-1)
 
 这个例子会展示如何开发一个伺服驱动。基于Wasome PLC的驱动设计机制，使用PLCOpen运动控制库开发的PLC应用可以在不同电机类型上工作。
 
-## Chapter 10: ["上位机"程序开发](./projects/ch10)
+## Chapter 10: "上位机"程序开发 [(进入)](./projects/ch10)
 
 Wasome PLC系统基于边缘计算平台架构，内置了物联网通讯协议支持。严格意义上并不需要上位机，这个例子会展示如何开发一个和传统“上位机”程序来读写PLC应用的内存区。

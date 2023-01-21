@@ -1,4 +1,8 @@
 # 通过MODBUS控制示例
+示例主要展示：
+-	配置IO表：建立程序变量和MODBUS寄存器之间的映射关系
+-	ST程序：使用读入的MODBUS数据，计算写入MODBUS的数据
+-	测试程序：python脚本将读写MODBUS寄存器用来验证ST程序的执行正确性
 
 ## 测试程序 (modbus_test.py)
 测试内容：
@@ -12,9 +16,11 @@
 ## 1: 双字节和四字节整数的访问
 输入：
 ```
+ST程序中定义IO类型变量：
         x0 AT %IW0 : INT;
         x1 AT %ID2 : DINT;
 
+IO配置中定义目标内存地址和外部设备的数据交互：
         {
             "location": 0,
             "type": "INT",
@@ -32,9 +38,11 @@
 
 输出：
 ```
+ST程序中定义IO类型变量：
         t0 AT %QW0 : INT;
         t1 AT %QD2 : DINT;
 
+IO配置中定义目标内存地址和外部设备的数据交互：
         {
             "location": 0,
             "type": "INT",
@@ -59,7 +67,10 @@ t1 = x1 -1
 输入：
 
 ```
+ST程序中定义IO类型变量：
         x2 AT %ID6 : REAL;
+
+IO配置中定义目标内存地址和外部设备的数据交互：
         {
             "location": 6,
             "type": "REAL",
@@ -72,7 +83,10 @@ t1 = x1 -1
 
 输出：
 ```
+ST程序中定义IO类型变量：
         t2 AT %QD6 : REAL;
+
+IO配置中定义目标内存地址和外部设备的数据交互：
         {
             "location": 6,
             "type": "REAL",
@@ -89,8 +103,10 @@ t1 = x1 -1
 - ST字节数组对应到多个IO连续的地址
 - 测试`num` = 3
 ```
+ST程序中定义IO类型变量：
         INPUTS AT %IB12 : ARRAY[0..2] OF BYTE;
 
+IO配置中定义目标内存地址和外部设备的数据交互：
         {
             "location": 11,
             "type": "SINT",
@@ -98,8 +114,11 @@ t1 = x1 -1
             "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=1&items=3"
         }
 
-输出：
+输出：  
+ST程序中定义IO类型变量：
         OUTPUTS AT %QB12 : ARRAY[0..2] OF BYTE;
+
+IO配置中定义目标内存地址和外部设备的数据交互：
         {
             "location": 12,
             "type": "BYTE",

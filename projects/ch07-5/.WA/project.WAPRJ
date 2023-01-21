@@ -1,0 +1,9 @@
+{
+    "name": "ch07-5",
+    "version": "0.0.1",
+    "description": "使用MODBUS(循环)方式访问设备",
+    "category": "application",
+    "template": "",
+    "vsc": true,
+    "lastOpenTime": 1670688000000
+}

@@ -1,0 +1,98 @@
+{
+    "network": {
+        "ethercat_bus_num": 0,
+        "modbus_bus_num": "1",
+        "redis_server_num": 0,
+        "shared_mem_num": 0,
+        "modbus_slaves": [
+            {
+                "idx": "",
+                "bus_idx": "",
+                "slave_ID": 0,
+                "desc": "",
+                "input_map": [
+                    {
+                        "reg": 3,
+                        "addr": 100,
+                        "items": 1,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "s1_fc3_100"
+                    },
+                    {
+                        "reg": 3,
+                        "addr": 101,
+                        "items": 3,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "s1_fc3_101"
+                    },
+                    {
+                        "reg": 3,
+                        "addr": 104,
+                        "items": 2,
+                        "code": "abcd",
+                        "type": "REAL",
+                        "variable": "s1_fc3_104"
+                    },
+                    {
+                        "reg": 1,
+                        "addr": 130,
+                        "items": 2,
+                        "code": "",
+                        "type": "SINT",
+                        "variable": "s1_fc1_130"
+                    }
+                ],
+                "output_map": [],
+                "bus": 0
+            },
+            {
+                "idx": "",
+                "bus_idx": "",
+                "slave_ID": 2,
+                "desc": "MODBUS TCP",
+                "input_map": [],
+                "output_map": [
+                    {
+                        "reg": 6,
+                        "addr": 100,
+                        "items": 1,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "s2_fc6_100"
+                    },
+                    {
+                        "reg": 6,
+                        "addr": 101,
+                        "items": 3,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "s2_fc6_101"
+                    },
+                    {
+                        "reg": 6,
+                        "addr": 104,
+                        "items": 2,
+                        "code": "abcd",
+                        "type": "REAL",
+                        "variable": "s2_fc6_104"
+                    },
+                    {
+                        "reg": 5,
+                        "addr": 130,
+                        "items": 2,
+                        "code": "",
+                        "type": "SINT",
+                        "variable": "s2_fc5_130"
+                    }
+                ]
+            }
+        ],
+        "ethercat_slaves": []
+    },
+    "io_editor": {
+        "input": [],
+        "output": []
+    }
+}
