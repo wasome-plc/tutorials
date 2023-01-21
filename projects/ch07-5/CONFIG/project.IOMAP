@@ -1,7 +1,7 @@
 {
     "network": {
         "ethercat_bus_num": 0,
-        "modbus_bus_num": "1",
+        "modbus_bus_num": 2,
         "redis_server_num": 0,
         "shared_mem_num": 0,
         "modbus_slaves": [
@@ -94,5 +94,10 @@
     "io_editor": {
         "input": [],
         "output": []
+    },
+    "settings": {
+        "read_errs_threshold": 100,
+        "write_errs_threshold": 10,
+        "fault_action": "stop"
     }
 }
