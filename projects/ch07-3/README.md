@@ -1,9 +1,23 @@
 # ethercat设备控制示例
 
+## 示例说明
+本实例中，汇川is620n伺服的从站地址为20，数字IO模块的从站地址为16。
+
+所使用从站的数据对象及对应的程序变量名称配置如下图：  
+![](./doc/imgs/IDE_IO.png)  
+
+电机的控制程序:[PROGRAM/prog_main.st](./PROGRAM/prog_main.st)
+
 ## 配置主站
 
-从WebConsole中配置主站0，如下图所示：
+从WebConsole中配置主站0，如下图所示：  
+- 配置：
+![](./doc/imgs/master_cfg.png)
+
+主站显示的状态中，确认几个关键参数确认主站已经进入工作状态：
+- Phase: Operation，Active: yes， Link: UP  
 ![](./doc/imgs/eth_master.png)
+
 
 ## 添加从站
 确认wa-plc-framework软件在`running`状态
@@ -14,11 +28,10 @@
 
 ![](./doc/imgs/new_slave.png)
 
-如果从站的地址为0，先设置从站的别名地址，然后选择“立即添加”。添加后需要重新启动wa-plc-framework才能生效!设备进入OP状态：
+如果从站的地址为0，先设置从站的别名地址，然后选择“立即添加”。添加后需要在主站首页点击按钮“重新启动EtherCAT服务”才能生效!设备进入OP状态：
 
 ![](./doc/imgs/eth_slaves.png)
 
-本实例中，汇川is620n伺服的从站地址为20，数字IO模块的从站地址为16。
 
 ## 配置从站
 进入IS620N从站配置，首先设置时钟：
@@ -52,8 +65,6 @@
 24829 (0x60fd)
 ```
 
-修改配置后需要wa-plc-framework才能生效!
-
 ### 注意： 汇川IS620N的配置！！！
 
 目前此设备从webconsole添加后导出的PDO没有包含必要的寄存器0x6060与0x60ff。需要进行如下操作之一：
@@ -67,6 +78,6 @@ cd Test-Devices
 - 在WebConsole中在设备上创建pdo 0x1600（SM2）与0x1a00（SM3），在读出来的基础上增加寄存器0x6060与0x60ff
 
 
-然后从web-console中重启wa-plc-framework.
+然后从web-console中重新启动EtherCAT服务生效配置.
 
 

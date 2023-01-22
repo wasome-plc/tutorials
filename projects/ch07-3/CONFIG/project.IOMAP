@@ -1,51 +1,73 @@
 {
     "io_editor": {
-        "input": [
+        "input": [],
+        "output": []
+    },
+    "network": {
+        "ethercat_bus_num": 1,
+        "modbus_bus_num": 0,
+        "redis_server_num": 0,
+        "shared_mem_num": 0,
+        "ethercat_slaves": [
             {
-                "location": 1000,
-                "type": "WORD",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24641&entry_subindex=0",
-                "row_index": 0
-            },
-            {
-                "location": 1002,
-                "type": "DWORD",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24676&entry_subindex=0",
-                "row_index": 1
-            }
-        ],
-        "output": [
-            {
-                "location": 1000,
-                "type": "WORD",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24640&entry_subindex=0"
-            },
-            {
-                "location": 1002,
-                "type": "DWORD",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24698&entry_subindex=0"
-            },
-            {
-                "location": 1006,
-                "type": "BYTE",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6060&entry_subindex=0"
-            },
-            {
-                "location": 1008,
-                "type": "DWORD",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24831&entry_subindex=0"
+                "bus": "",
+                "slave_ID": 20,
+                "desc": "汇川IS620N",
+                "input_start": "",
+                "output_start": "",
+                "input_map": [
+                    {
+                        "obj_entry": 24641,
+                        "sub_entry": 0,
+                        "variable": "Reg_6041_status",
+                        "offset": "",
+                        "isEdit": true,
+                        "type": "INT"
+                    },
+                    {
+                        "obj_entry": 24676,
+                        "sub_entry": 0,
+                        "variable": "Reg_6064_actual_pos",
+                        "offset": "",
+                        "isEdit": true,
+                        "type": "DINT"
+                    }
+                ],
+                "output_map": [
+                    {
+                        "obj_entry": 24640,
+                        "sub_entry": 0,
+                        "variable": "Reg_6040_control_word",
+                        "offset": "",
+                        "isEdit": true,
+                        "type": "INT"
+                    },
+                    {
+                        "obj_entry": 24698,
+                        "sub_entry": 0,
+                        "variable": "Reg_607a_target_pos",
+                        "offset": "",
+                        "isEdit": true,
+                        "type": "DINT"
+                    },
+                    {
+                        "obj_entry": 24672,
+                        "sub_entry": 0,
+                        "variable": "Reg_6060_modesel",
+                        "offset": "",
+                        "isEdit": true,
+                        "type": "SINT"
+                    },
+                    {
+                        "obj_entry": 24831,
+                        "sub_entry": 0,
+                        "variable": "Reg_60ff_target_vel",
+                        "offset": "",
+                        "isEdit": true,
+                        "type": "DINT"
+                    }
+                ],
+                "master": 0
             }
         ]
     }
