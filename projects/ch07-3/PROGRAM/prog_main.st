@@ -1,27 +1,3 @@
-/*
-static uint16_t coe_cia402_statemachine(uint16_t status)
-{
-    if ((status&0x4F) == 0x0) {		// Not ready to Switch on
-        return 0x80;
-    } else if ((status&0x4F) == 0x40) { // Switch on Disabled
-        return 0x6;
-    } else if ((status&0x6F) == 0x21) { // Ready to Switch on
-        return 0x7;
-    } else if ((status&0x6F) == 0x23) { // Switch on
-        return 0xF;
-    } else if ((status&0x6F) == 0x27) { // Operation enabled
-        return 0x1F;
-    } else if ((status&0x6F) == 0x07) { // Quick stop active
-        return 0x0;
-    } else if ((status&0x4F) == 0x0F) { // Fault reaction active
-        return 0x80;
-    } else if ((status&0x4F) == 0x08) { // Fault
-        return 0x80;
-    }
-    return 0x80;
-}
-*/
-
 FUNCTION GetControlWord : INT
 VAR_INPUT
     status: INT;
@@ -55,14 +31,6 @@ END_FUNCTION
 
 PROGRAM PLC_PRG
     VAR
-        Reg_6041_status AT %IW1000 : INT;
-        Reg_6064_actual_pos AT %ID1002 : DINT;
-
-        Reg_6040_control_word AT %QW1000 : INT;
-        Reg_607a_target_pos AT %QD1002 : DINT;
-        Reg_6060_modesel AT %QB1006 : SINT;
-        Reg_60ff_target_vel AT %QD1008 : DINT;
-
         target_position: DINT := 0;
         target_vel: DINT := 16#1000000;
         cnt : INT := 0;
