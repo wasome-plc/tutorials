@@ -31,37 +31,35 @@ PROGRAM PLC_PRG
     // 设置t2等于x2
     t2 := x2;
 
-    WARNING('cur: %d, INPUT10.1:%d, INPUT10.1: %d', cur, TO_INT(INPUT10_1), TO_INT(INPUT10_1));
+    //WARNING('cur: %d, INPUT10.1:%d, INPUT10.1: %d', cur, TO_INT(INPUT10_1), TO_INT(INPUT10_1));
 
     // 忽略第一个周期
     IF cur = -1 THEN
         cur := 0;
     ELSE 
         // 验证在modbus寄存器12..14本周期读出来的值等于上周期写入的值
-        FOR i:= 0 TO 3 DO
+        FOR i:= 0 TO 2 DO
             IF INPUTS[i] <> OUTPUTS[i] THEN
                 ERR_CNT := ERR_CNT + 1;
-                WA_LOG('%d: INPUT: %d, OUTPUT: %d$n', i, TO_INT(INPUTS[i]), TO_INT(OUTPUTS[i]));
+                WA_LOG('Mismatch - %d', i);
             END_IF
         END_FOR;
     END_IF;
 
+    WARNING('#%d, INPUTS:[%d,%d,%d]', cur, INPUTS[0], INPUTS[1],INPUTS[2]);
+
     // 对于modbus寄存器12..14进行跑马灯写值
-   FOR i:= 0 TO 3 DO
+   FOR i:= 0 TO 2 DO
        OUTPUTS[i]:= 0;
    END_FOR;
    OUTPUTS[cur] := 1;
+
 
    cur := cur + 1;
     IF cur = 3 THEN
         cur := 0;
     END_IF;
+
+   WARNING('#%d, OUTPUTS:[%d,%d,%d]', cur, OUTPUTS[0], OUTPUTS[1],OUTPUTS[2]);
+
 END_PROGRAM
-
-CONFIGURATION configuration0
-
-    RESOURCE res0 ON PLC
-        TASK task0(INTERVAL := T#2000ms, PRIORITY := 1);
-        PROGRAM instance1 WITH task0 : PLC_PRG;
-    END_RESOURCE
-END_CONFIGURATION
