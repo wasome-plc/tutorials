@@ -11,10 +11,10 @@
 
 ## APP IO配置
 ### 输入区
-![](./doc//imgs/io_input.png)
+![](./doc/imgs/io_input.png)
 
 ### 输出区
-![](./doc//imgs/io_output.png)
+![](./doc/imgs/io_output.png)
 
 ## 目标设备上总线配置
 在目标设备的WebConsole上"modbus (循环)"导航栏入口中配置总线bus-1:  
@@ -91,8 +91,9 @@ IO配置中定义目标内存地址和外部设备的数据交互：
 
 验证方法：
 
-t0 = x0 + 1
-t1 = x1 -1
+- t0 = x0 + 1 ---> reg100 = reg1 +1
+- t1 = x1 -1  ---> reg101 = reg2 -1
+- 
 
 ### 2 浮点
 输入：

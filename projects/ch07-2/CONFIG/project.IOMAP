@@ -1,6 +1,6 @@
 {
     "settings": {
-        "default_interval_us": 200000,
+        "default_interval_us": 500000,
         "read_errs_threshold": 100,
         "write_errs_threshold": 100,
         "fault_action": "stop"
