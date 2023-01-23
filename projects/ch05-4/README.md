@@ -3,6 +3,8 @@
   IX00、IX30分别为启动、停止QX00的按钮，具有互锁限制
   IX10和IX20分别控制QX10和QX20|同时QX00是必要条件，对QX10和QX20具有联锁限制
 
+# 逻辑
+![](./Doc/ld.png)
 
 # 运行
 - 1 目标机启动plc-manager， 并且配置modbus总线 bus-1
