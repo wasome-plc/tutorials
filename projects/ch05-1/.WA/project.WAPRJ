@@ -1,9 +1,9 @@
 {
     "name": "ch05-1",
-    "version": "0.0.1",
-    "description": "Chapter 05, step 1 example",
+    "version": "0.0.2",
+    "description": "Chapter 05 sample, step 1",
     "category": "application",
     "template": "",
     "vsc": true,
-    "lastOpenTime": 1649808850896
+    "lastOpenTime": 1649779200000
 }
