@@ -29,8 +29,8 @@ if __name__ == "__main__":
     logger = modbus_tk.utils.create_logger("console", level=logging.DEBUG)
 
     os.system('kill -9 `pidof modbus_test_server`');
-    os.system(f'/ams/iagent/product/modbus_test_server -p {port} &')
-    os.system(f'/ams/iagent/product/modbus_test_server -p {port+1} &')
+    os.system(f'/ams-test/wa-agent/product/modbus_test_server -p {port} &')
+    os.system(f'/ams-test/wa-agent/product/modbus_test_server -p {port+1} &')
 
     time.sleep(2)
 
