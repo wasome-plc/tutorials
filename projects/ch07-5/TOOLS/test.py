@@ -15,7 +15,7 @@ import logging
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Modbus test server validator")
     parser.add_argument('-p', dest = 'port', action = 'store',
-        default = 1502,
+        default = 1510,
         help = 'modbus device port number')
     parser.add_argument('-s', dest = 'step', action = 'store_true',
         default = False,
