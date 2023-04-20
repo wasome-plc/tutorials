@@ -6,7 +6,7 @@
 
 ## 测试条件
 
-1. 目标设备上安装了iagent软件包
+1. 目标设备上安装了wa-agent软件包
 2. 目标设备上安装了Python3以及modbus_tk。执行命令安装：
 ```
 pip install modbus_tk
