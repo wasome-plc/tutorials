@@ -1,0 +1,144 @@
+{
+    "nodes": [
+        {
+            "type": "FB",
+            "inputs": [
+                {
+                    "type": "BOOL",
+                    "linkedVariable": "ins1",
+                    "not": false,
+                    "paramName": "I0_1"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "BOOL",
+                    "linkedVariable": "",
+                    "not": false,
+                    "paramName": "I0"
+                },
+                {
+                    "type": "BOOL",
+                    "linkedVariable": "",
+                    "not": false,
+                    "paramName": "M"
+                }
+            ],
+            "inouts": [],
+            "functionName": "fbd_test_1",
+            "className": "Block",
+            "var_name": "fbd_test_1_1",
+            "id": "fbd_test_1_1",
+            "top": 190,
+            "left": 330,
+            "order": "1",
+            "focus": false,
+            "index": 0
+        },
+        {
+            "type": "FB",
+            "inputs": [
+                {
+                    "type": "BOOL",
+                    "linkedVariable": "",
+                    "not": false,
+                    "paramName": "I0"
+                },
+                {
+                    "type": "BOOL",
+                    "linkedVariable": "",
+                    "not": false,
+                    "paramName": "M"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "BOOL",
+                    "linkedVariable": "out1",
+                    "not": false,
+                    "paramName": "Q_1"
+                }
+            ],
+            "inouts": [],
+            "functionName": "fbd_test_2",
+            "className": "Block",
+            "var_name": "fbd_test_2_1",
+            "id": "fbd_test_2_1",
+            "top": 190,
+            "left": 730,
+            "order": "2",
+            "focus": false,
+            "index": 1
+        }
+    ],
+    "edges": [
+        {
+            "shape": "edge",
+            "id": "4de02b9a-9493-4da5-b1d6-2c3b5ecf37ce",
+            "connector": {
+                "name": "rounded"
+            },
+            "zIndex": 0,
+            "source": {
+                "cell": "fbd_test_1_1",
+                "port": "output.I0"
+            },
+            "target": {
+                "cell": "fbd_test_2_1",
+                "port": "input.I0"
+            },
+            "tools": {
+                "items": [],
+                "name": null
+            }
+        },
+        {
+            "shape": "edge",
+            "id": "1f9f7666-f607-45d4-bbdf-4c1a8bf8a28a",
+            "connector": {
+                "name": "rounded"
+            },
+            "zIndex": 0,
+            "source": {
+                "cell": "fbd_test_1_1",
+                "port": "output.M"
+            },
+            "target": {
+                "cell": "fbd_test_2_1",
+                "port": "input.M"
+            },
+            "tools": {
+                "items": [],
+                "name": null
+            }
+        }
+    ],
+    "variables": [
+        {
+            "name": "d",
+            "category": "VAR",
+            "type": "BOOL"
+        },
+        {
+            "name": "s",
+            "category": "VAR",
+            "type": "BOOL"
+        },
+        {
+            "name": "r1",
+            "category": "VAR",
+            "type": "BOOL"
+        },
+        {
+            "name": "sa",
+            "category": "VAR",
+            "type": "INT"
+        },
+        {
+            "name": "ft",
+            "category": "VAR",
+            "type": "INT"
+        }
+    ],
+    "type": "PROGRAM"
+}
