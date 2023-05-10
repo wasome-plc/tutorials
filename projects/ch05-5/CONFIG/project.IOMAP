@@ -1,0 +1,32 @@
+{
+    "network": {
+        "modbus_bus_num": 1,
+        "modbus_slaves": [
+            {
+                "bus_idx": 0,
+                "slave_ID": 1,
+                "desc": "",
+                "input_map": [
+                    {
+                        "reg": 1,
+                        "addr": 12,
+                        "items": 1,
+                        "code": "",
+                        "type": "BOOL",
+                        "variable": "ins1"
+                    }
+                ],
+                "output_map": [
+                    {
+                        "reg": 5,
+                        "addr": 14,
+                        "items": 1,
+                        "code": "",
+                        "type": "BOOL",
+                        "variable": "out1"
+                    }
+                ]
+            }
+        ]
+    }
+}
