@@ -1,118 +1,122 @@
 {
-    "io_editor": {
-        "input": [
+    "network": {
+        "ethercat_slaves": [
             {
-                "location": null,
-                "type": "INT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24641&entry_subindex=0",
-                "global_name": "Reg_6041_status",
-                "row_index": 0
-            },
-            {
-                "location": null,
-                "type": "SINT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6061&entry_subindex=0",
-                "global_name": "mode_display",
-                "row_index": 1
-            },
-            {
-                "location": null,
-                "type": "SINT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6064&entry_subindex=0",
-                "global_name": "actual_pos",
-                "row_index": 2
-            },
-            {
-                "location": null,
-                "type": "INT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24761&entry_subindex=0",
-                "global_name": "touch_probe_status",
-                "row_index": 3
-            },
-            {
-                "location": null,
-                "type": "DINT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x60ba&entry_subindex=0",
-                "global_name": "touch_probe_value",
-                "row_index": 4
-            },
-            {
-                "location": null,
-                "type": "DINT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x60FD&entry_subindex=0",
-                "global_name": "digital_input",
-                "row_index": 5
-            },
-            {
-                "location": null,
-                "type": "INT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x603F&entry_subindex=0",
-                "global_name": "last_error",
-                "row_index": 6
-            },
-            {
-                "location": null,
-                "type": "DINT",
-                "prot": "ethcat2",
-                "access": "shm2://[ethercat]:5566/rg2?master=0&slave=20&regname=Slave_State",
-                "global_name": "slave_state",
-                "row_index": 7
-            }
-        ],
-        "output": [
-            {
-                "location": 1000,
-                "type": "INT",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=24640&entry_subindex=0",
-                "global_name": "Reg_6040_control_word"
-            },
-            {
-                "location": 1002,
-                "type": "DINT",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x607A&entry_subindex=0",
-                "global_name": "target_position"
-            },
-            {
-                "location": 1006,
-                "type": "SINT",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6060&entry_subindex=0",
-                "global_name": "Reg_6060_modesel"
-            },
-            {
-                "location": 1008,
-                "type": "DINT",
-                "num": 1,
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x60FF&entry_subindex=0",
-                "global_name": "target_vel"
-            },
-            {
-                "location": null,
-                "type": "DINT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6083&entry_subindex=0",
-                "global_name": "target_acc"
-            },
-            {
-                "location": null,
-                "type": "DINT",
-                "prot": "ethcat",
-                "access": "shm2://[ethercat]:5566/rg?master=0&slave=20&entry_index=0x6084&entry_subindex=0",
-                "global_name": "target_dec"
+                "device_number": 1000,
+                "default_device_name": "is620n",
+                "desc": "DM3E-556dm3e_556",
+                "master": 0,
+                "slave_ID": 20,
+                "input_start": "",
+                "output_start": "",
+                "input_map": [
+                    {
+                        "obj_entry": 24641,
+                        "sub_entry": 0,
+                        "type": "INT",
+                        "num": 1,
+                        "variable": "Reg_6041_status"
+                    },
+                    {
+                        "obj_entry": 24673,
+                        "sub_entry": 0,
+                        "type": "SINT",
+                        "num": 1,
+                        "variable": "mode_display"
+                    },
+                    {
+                        "obj_entry": 24676,
+                        "sub_entry": 0,
+                        "type": "SINT",
+                        "num": 1,
+                        "variable": "actual_pos"
+                    },
+                    {
+                        "obj_entry": 24761,
+                        "sub_entry": 0,
+                        "type": "INT",
+                        "num": 1,
+                        "variable": "touch_probe_status"
+                    },
+                    {
+                        "obj_entry": 24762,
+                        "sub_entry": 0,
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "touch_probe_value"
+                    },
+                    {
+                        "obj_entry": 24829,
+                        "sub_entry": 0,
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "digital_input"
+                    },
+                    {
+                        "obj_entry": 24639,
+                        "sub_entry": 0,
+                        "type": "INT",
+                        "num": 1,
+                        "variable": "last_error"
+                    },
+                    {
+                        "regname": "Slave_State",
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "slave_state"
+                    }
+                ],
+                "output_map": [
+                    {
+                        "obj_entry": 24640,
+                        "sub_entry": 0,
+                        "type": "INT",
+                        "num": 1,
+                        "variable": "Reg_6040_control_word"
+                    },
+                    {
+                        "obj_entry": 24698,
+                        "sub_entry": 0,
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "target_position"
+                    },
+                    {
+                        "obj_entry": 24672,
+                        "sub_entry": 0,
+                        "type": "SINT",
+                        "num": 1,
+                        "variable": "Reg_6060_modesel"
+                    },
+                    {
+                        "obj_entry": 24831,
+                        "sub_entry": 0,
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "target_vel"
+                    },
+                    {
+                        "obj_entry": 24707,
+                        "sub_entry": 0,
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "target_acc"
+                    },
+                    {
+                        "obj_entry": 24708,
+                        "sub_entry": 0,
+                        "type": "DINT",
+                        "num": 1,
+                        "variable": "target_dec"
+                    }
+                ]
             }
         ]
+    },
+    "settings": {
+        "default_interval_us": 1000000,
+        "read_errs_threshold": 3,
+        "write_errs_threshold": 3,
+        "fault_action": "stop"
     }
 }

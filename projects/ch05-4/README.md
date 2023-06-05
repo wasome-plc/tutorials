@@ -7,11 +7,11 @@
 ![](./Doc/ld.png)
 
 # 运行
-- 1 目标机启动plc-manager， 并且配置modbus总线 bus-1
+- 1 目标机启动plc-manager， 在目标机的管理页面中”设备连接与配置“->"MODBUS从站（PLC应用）"中添加名称为device_cha05_4的从站
 - 2 启动modbus simulator来模拟互锁联锁装置
 - 3 编译PLC APP
 - 4 在WebIDE的“目标设备”中添加待调试运行PLC APP的目标机IP地址， 并设置该目标设备为缺省设备
-- 5 进入调试 
+- 5 点击目标设备的“部署运行当前应用”按钮进入plc的部署运行界面，完成后plc应该能进入running状态
 
 # 测试
  - 1 按“运行”的步骤启动PLC APP

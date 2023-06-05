@@ -81,3 +81,8 @@ cd Test-Devices
 然后从web-console中重新启动EtherCAT服务生效配置.
 
 
+### 部署APP
+按上面的步骤添加完ethercat从站后，连接好伺服器和电机后， 可以将PLC APP部署到该目标机上。
+- 通过IDE中“目标设备” ---> “部署运行当前应用” ， 设定plc vm的名称与runtime的版本
+- IO配置页面上选择要绑定的从站设备
+- PLC VM应该可以在running状态、电机处于转动状态

@@ -1,10 +1,9 @@
 {
     "network": {
-        "modbus_bus_num": 1,
         "modbus_slaves": [
             {
-                "bus_idx": 0,
-                "slave_ID": 1,
+                "device_number": 0,
+                "default_device_name": "device_ch05_5",
                 "desc": "",
                 "input_map": [
                     {

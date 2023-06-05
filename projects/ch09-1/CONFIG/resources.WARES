@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "name": "_CONFIGURE_MANUAL_",
+        "resources": [
+            {
+                "tasks": [
+                    {
+                        "name": "task1",
+                        "priority": 1,
+                        "interval": 1000
+                    }
+                ],
+                "programs": [],
+                "name": "_RESOURCE_MANUAL_"
+            }
+        ]
+    }
+]

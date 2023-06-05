@@ -4,15 +4,13 @@
         "output": []
     },
     "network": {
-        "ethercat_bus_num": 1,
-        "modbus_bus_num": 0,
-        "redis_server_num": 0,
-        "shared_mem_num": 0,
         "ethercat_slaves": [
             {
-                "bus": "",
-                "slave_ID": 20,
+                "device_number": 1000,
+                "default_device_name": "is620n",
                 "desc": "汇川IS620N",
+                "master": 0,
+                "slave_ID": 20,
                 "input_start": "",
                 "output_start": "",
                 "input_map": [
@@ -66,9 +64,14 @@
                         "isEdit": true,
                         "type": "DINT"
                     }
-                ],
-                "master": 0
+                ]
             }
         ]
+    },
+    "settings": {
+        "default_interval_us": 1000000,
+        "read_errs_threshold": 3,
+        "write_errs_threshold": 3,
+        "fault_action": "stop"
     }
 }

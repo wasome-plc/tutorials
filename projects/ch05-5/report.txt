@@ -1,27 +1,27 @@
 DEBUG:root:packing tool started
-INFO:root:current_dir is /home/liuxin/work/tutorials/projects/ch05-5
+INFO:root:current_dir is /home/softplc/iot/tutorials/projects/ch05-5
 INFO:root:silent_mode: true
 DEBUG:root:input folder:
-DEBUG:root:/tmp/iecc-pack-beeb17_s
-INFO:root:output_file_name:/home/liuxin/work/tutorials/projects/ch05-5/build/app
-INFO:root:input path/tmp/iecc-pack-beeb17_s exists
+DEBUG:root:/tmp/iecc-pack-v2mu9rrq
+INFO:root:output_file_name:/home/softplc/iot/tutorials/projects/ch05-5/build/app
+INFO:root:input path/tmp/iecc-pack-v2mu9rrq exists
 INFO:root:package.info correct
-DEBUG:root:/tmp/iecc-pack-beeb17_s/../ams_working_temp/package.info
-DEBUG:root:update_md5 for /tmp/iecc-pack-beeb17_s/../ams_working_temp/app
-DEBUG:root:calculated md5 for /app_dbg.bin version: 1.0.2 MD5: c085524bae53e373bf14988478775faf
-DEBUG:root:{'f': '/app_dbg.bin', 'v': '1.0.2', 'h': 'c085524bae53e373bf14988478775faf'}
-DEBUG:root:calculated md5 for /iec.io_map version: 1.0.2 MD5: 7b0932755a06684945fc1e5044fbafbc
-DEBUG:root:{'f': '/iec.io_map', 'v': '1.0.2', 'h': '7b0932755a06684945fc1e5044fbafbc'}
+DEBUG:root:/tmp/iecc-pack-v2mu9rrq/../ams_working_temp/package.info
+DEBUG:root:update_md5 for /tmp/iecc-pack-v2mu9rrq/../ams_working_temp/app
 DEBUG:root:calculated md5 for /package.info version: 1.0.2 MD5: e644daa9df7d63381db16950281f2324
 DEBUG:root:{'f': '/package.info', 'v': '1.0.2', 'h': 'e644daa9df7d63381db16950281f2324'}
-DEBUG:root:calculated md5 for /app.layout version: 1.0.2 MD5: 0dda5d671a0be581c48749d5cdd67af7
-DEBUG:root:{'f': '/app.layout', 'v': '1.0.2', 'h': '0dda5d671a0be581c48749d5cdd67af7'}
-DEBUG:root:calculated md5 for /app.bin version: 1.0.2 MD5: 615ee26ab584d9f10eb3f2049cf8e822
-DEBUG:root:{'f': '/app.bin', 'v': '1.0.2', 'h': '615ee26ab584d9f10eb3f2049cf8e822'}
 DEBUG:root:calculated md5 for /iec.cfg version: 1.0.2 MD5: af02453e49bc5227120d63660f4b51e4
 DEBUG:root:{'f': '/iec.cfg', 'v': '1.0.2', 'h': 'af02453e49bc5227120d63660f4b51e4'}
+DEBUG:root:calculated md5 for /app.layout version: 1.0.2 MD5: 81a8c5739e68d4c65f98433afef75168
+DEBUG:root:{'f': '/app.layout', 'v': '1.0.2', 'h': '81a8c5739e68d4c65f98433afef75168'}
+DEBUG:root:calculated md5 for /app_dbg.bin version: 1.0.2 MD5: 41e539f7e7e681a8ad8cf9533333394b
+DEBUG:root:{'f': '/app_dbg.bin', 'v': '1.0.2', 'h': '41e539f7e7e681a8ad8cf9533333394b'}
+DEBUG:root:calculated md5 for /iec.io_map version: 1.0.2 MD5: 2101e7ae8b610e4b74b54df7a76d1384
+DEBUG:root:{'f': '/iec.io_map', 'v': '1.0.2', 'h': '2101e7ae8b610e4b74b54df7a76d1384'}
+DEBUG:root:calculated md5 for /app.bin version: 1.0.2 MD5: 2909e1537de0bcd13349db3fd3014d4b
+DEBUG:root:{'f': '/app.bin', 'v': '1.0.2', 'h': '2909e1537de0bcd13349db3fd3014d4b'}
 DEBUG:root:calculated md5 for /ams/version/package.info version: 1.0.2 MD5: e644daa9df7d63381db16950281f2324
 DEBUG:root:{'f': '/ams/version/package.info', 'v': '1.0.2', 'h': 'e644daa9df7d63381db16950281f2324'}
-DEBUG:root:[{'f': '/app_dbg.bin', 'v': '1.0.2', 'h': 'c085524bae53e373bf14988478775faf'}, {'f': '/iec.io_map', 'v': '1.0.2', 'h': '7b0932755a06684945fc1e5044fbafbc'}, {'f': '/package.info', 'v': '1.0.2', 'h': 'e644daa9df7d63381db16950281f2324'}, {'f': '/app.layout', 'v': '1.0.2', 'h': '0dda5d671a0be581c48749d5cdd67af7'}, {'f': '/app.bin', 'v': '1.0.2', 'h': '615ee26ab584d9f10eb3f2049cf8e822'}, {'f': '/iec.cfg', 'v': '1.0.2', 'h': 'af02453e49bc5227120d63660f4b51e4'}, {'f': '/ams/version/package.info', 'v': '1.0.2', 'h': 'e644daa9df7d63381db16950281f2324'}]
-DEBUG:root:/tmp/iecc-pack-beeb17_s/../ams_working_temp/app/ams/version
+DEBUG:root:[{'f': '/package.info', 'v': '1.0.2', 'h': 'e644daa9df7d63381db16950281f2324'}, {'f': '/iec.cfg', 'v': '1.0.2', 'h': 'af02453e49bc5227120d63660f4b51e4'}, {'f': '/app.layout', 'v': '1.0.2', 'h': '81a8c5739e68d4c65f98433afef75168'}, {'f': '/app_dbg.bin', 'v': '1.0.2', 'h': '41e539f7e7e681a8ad8cf9533333394b'}, {'f': '/iec.io_map', 'v': '1.0.2', 'h': '2101e7ae8b610e4b74b54df7a76d1384'}, {'f': '/app.bin', 'v': '1.0.2', 'h': '2909e1537de0bcd13349db3fd3014d4b'}, {'f': '/ams/version/package.info', 'v': '1.0.2', 'h': 'e644daa9df7d63381db16950281f2324'}]
+DEBUG:root:/tmp/iecc-pack-v2mu9rrq/../ams_working_temp/app/ams/version
 INFO:root:ams_pack success

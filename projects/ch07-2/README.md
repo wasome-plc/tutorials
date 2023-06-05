@@ -31,9 +31,10 @@
 ## 执行测试
 在编译打包本项目的程序后，参考IDE操作手册，执行以下测试步骤：
 1. 将编译打包好的PLC APP程序部署到目标机（可以是开发机相同的主机）
-2. 确认部署的PLC实例进入运行状态
-3. 确认目标机上安装了iagent和modbus_simulator软件，并在运行状态
-4. 执行测试程序`modbus_test.py`
+2. 打开页面 http://<目标机IP>:3000/#/modbus, 点击“MODBUS从站(PLC应用)”栏的"+ Add"按钮添加从站"device_ch07_2" 
+3. 确认部署的PLC实例进入运行状态
+4. 确认目标机上安装了iagent和modbus_simulator软件，并在运行状态
+5. 执行测试程序`modbus_test.py`
 ```
    python3 modbus_test.py
 ```
