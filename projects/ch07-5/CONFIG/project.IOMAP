@@ -1,15 +1,10 @@
 {
     "network": {
-        "ethercat_bus_num": 0,
-        "modbus_bus_num": 0,
-        "redis_server_num": 0,
-        "shared_mem_num": 0,
         "modbus_slaves": [
             {
-                "idx": "",
-                "bus_idx": -1,
-                "slave_ID": 0,
+                "device_number": 0,
                 "desc": "",
+                "default_device_name": "s1",
                 "input_map": [
                     {
                         "reg": 3,
@@ -48,10 +43,9 @@
                 "bus": 0
             },
             {
-                "idx": "",
-                "bus_idx": -1,
-                "slave_ID": 2,
+                "device_number": 1,
                 "desc": "MODBUS TCP",
+                "default_device_name": "s2",
                 "input_map": [],
                 "output_map": [
                     {
