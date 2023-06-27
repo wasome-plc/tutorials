@@ -2,14 +2,14 @@ PROGRAM PLC_PRG
     VAR
         // INPUTS [0..2]对应modbus寄存器12,13,14读入数值
         // OUTPUTS[0..2]对应要写入modbus寄存器12,13,14的数值
-        OUTPUTS AT %QB12 : ARRAY[0..2] OF BYTE;
-        INPUTS AT %IB12 : ARRAY[0..2] OF BYTE;
+        // OUTPUTS AT %QB12 : ARRAY[0..2] OF BYTE;
+        // INPUTS AT %IB12 : ARRAY[0..2] OF BYTE;
 
-        INPUT10_0 AT %IX10.0: BOOL;
-        INPUT10_1 AT %IX10.1: BOOL;
+        // INPUT10_0 AT %IX10.0: BOOL;
+        // INPUT10_1 AT %IX10.1: BOOL;
 
         // ERR_CNT: 对应modbus寄存器20, 用来输出错误计数
-        ERR_CNT AT %QW20 : INT := 1;
+        // ERR_CNT AT %QW20 : INT := 1;
 
         i : INT := 0;
         cur : INT := -1;
@@ -50,9 +50,9 @@ PROGRAM PLC_PRG
 
     // 对于modbus寄存器12..14进行跑马灯写值
    FOR i:= 0 TO 2 DO
-       OUTPUTS[i]:= 0;
+       OUTPUTS[i]:= INPUTS[i];
    END_FOR;
-   OUTPUTS[cur] := 1;
+   INPUTS[cur] := 1;
 
 
    cur := cur + 1;

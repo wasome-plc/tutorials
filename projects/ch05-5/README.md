@@ -46,11 +46,13 @@ FUNCTION_BLOCK fbd_test_2
       Q_1:=0;
   ELSIF I0=0 AND M=1 THEN
       Q_1:=0;
-    ELSIF I0=1 AND M=1 THEN
-        Q_1:=1;
-       IF Q_1=1 THEN
-           I0_3:=0;
-       END_IF;
+  ELSIF I0=1 AND M=1 THEN
+      Q_1:=1;
+      IF Q_1=1 THEN
+          I0_3:=0;
+      END_IF;
+  ELSIF I0=1 AND M=0 THEN
+        Q_1:=0;
   END_IF;
 END_FUNCTION_BLOCK
 ```
@@ -72,8 +74,7 @@ pip install modbus_tk
 ```
 # 测试
  - 1 按“运行”的步骤启动PLC APP
- - 2 pip3 install -r tool/reuirements.txt
- - 3 python TOOLS/test_demo.py
+ - 2 python TOOLS/test_demo.py
    如果目标机不是本机， 请替换脚本中的ip地址127.0.0.1为目标机的IP，该脚本会使用API设置输入值， 利用API获取输出值，比较输出值与上表中的期望值是否一致， 一致则case pass   
 
 ## IO Mapping

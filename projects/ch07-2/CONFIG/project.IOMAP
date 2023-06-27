@@ -6,62 +6,88 @@
         "fault_action": "stop"
     },
     "network": {
-      "modbus_slaves":[{
-        "device_number":1,
-        "default_device_name":"device_ch07_2",
-        "desc":"",
-        "input_map": [
+        "modbus_slaves": [
             {
-                "type": "INT",
-                "reg": 3,
-                "addr": 1,
-                "items": 1,
-                "variable": "x0"
-            },
-            {
-                "type": "DINT",
-                "reg": 3,
-                "addr": 2,
-                "code":"abcdi",
-                "items": 1,
-                "variable": "x1"
-            },
-            {
-                "type": "REAL",
-                "reg": 3,
-                "addr": 4,
-                "code":"abcd",
-                "items": 1,
-                "variable": "x2"
-            }
-        ],
-        "output_map": [
-            {
-                "type": "INT",
-                "reg": 6,
-                "addr": 100,
-                "items": 1,
-                "variable": "t0"
-            },
-            {
-                "type": "DINT",
-                "reg": 6,
-                "addr": 101,
-                "code": "abcdi",
-                "fc": 16,
-                "items": 1,
-                "variable": "t1"
-            },
-            {
-                "type": "REAL",
-                "reg": 6,
-                "addr": 103,
-                "code": "abcd",
-                "fc": 16,
-                "items": 1,
-                "variable": "t2"
+                "device_number": 1,
+                "default_device_name": "device_ch07_2",
+                "desc": "",
+                "input_map": [
+                    {
+                        "type": "INT",
+                        "reg": 3,
+                        "addr": 1,
+                        "items": 1,
+                        "variable": "x0"
+                    },
+                    {
+                        "type": "DINT",
+                        "reg": 3,
+                        "addr": 2,
+                        "code": "abcdi",
+                        "items": 1,
+                        "variable": "x1"
+                    },
+                    {
+                        "type": "REAL",
+                        "reg": 3,
+                        "addr": 4,
+                        "code": "abcd",
+                        "items": 1,
+                        "variable": "x2"
+                    },
+                {
+                    "reg": 3,
+                    "addr": 12,
+                    "items": 3,
+                    "code": "",
+                    "type": "INT",
+                    "variable": "INPUTS"
+                }
+                ],
+                "output_map": [
+                    {
+                        "type": "INT",
+                        "reg": 6,
+                        "addr": 100,
+                        "items": 1,
+                        "variable": "t0"
+                    },
+                    {
+                        "type": "DINT",
+                        "reg": 6,
+                        "addr": 101,
+                        "code": "abcdi",
+                        "fc": 16,
+                        "items": 1,
+                        "variable": "t1"
+                    },
+                    {
+                        "type": "REAL",
+                        "reg": 6,
+                        "addr": 103,
+                        "code": "abcd",
+                        "fc": 16,
+                        "items": 1,
+                        "variable": "t2"
+                    },
+                    {
+                        "reg": 6,
+                        "addr": 112,
+                        "items": 3,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "OUTPUTS"
+                    },
+                    {
+                        "reg": 6,
+                        "addr": 20,
+                        "items": 1,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "ERR_CNT"
+                    }
+                ]
             }
         ]
-    }]
-  }
+    }
 }

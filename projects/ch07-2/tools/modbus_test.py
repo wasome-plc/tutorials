@@ -9,17 +9,17 @@ It is the entrance of the iagent test framework.
 import argparse
 import datetime
 import os
-import pprint
 import random
-import re
-import shlex
-import subprocess
 import signal
 import sys
 import time
 import shutil
 from subprocess import check_output, CalledProcessError
 import json
+import modbus_tk
+import modbus_tk.defines as cst
+from modbus_tk import modbus_tcp
+import logging
 
 CASE_NAME = 'integration-01'
 
@@ -31,7 +31,8 @@ def Register_signal_handler():
     signal.signal(signal.SIGINT, signal_handler)
 #    signal.pause()
 
-
+def register_value(s):
+    return s[0]*256*256+s[1]
 
 if __name__ == "__main__":
 
@@ -47,58 +48,66 @@ if __name__ == "__main__":
     print(args)
     Register_signal_handler()
 
-    dirname, filename = os.path.split(os.path.abspath(sys.argv[0]))
-    run_dir = dirname + "/run"
-    repo_root_dir = os.path.abspath(os.path.join(dirname, "../../.."))
+    logger = modbus_tk.utils.create_logger("console", level=logging.DEBUG)
 
+    os.system('kill -9 `pidof modbus_test_server`');
+    port=6003
+    slave_id=3
+    os.system(f'/ams/wa-agent/product/modbus_test_server -p {port} &')
 
-    sys.path.append(repo_root_dir + "/deps/CoAPthon3/coapthon")
-    from coapthon.client.helperclient import HelperClient
-    from coapthon import defines
+    time.sleep(2)
+    try:
+        # Connect to the slave
+        master = modbus_tcp.TcpMaster('127.0.0.1', port)
+        master.set_timeout(5.0)
 
-    bus_name = "bus-1"
+    except modbus_tk.modbus.ModbusError as exc:
+        logger.error("%s- Code=%d", exc, exc.get_exception_code())
+        sys.exit("connect fail")
+
+    logger.info("tool: connected to modbus device")
 
     # Write values to modubs
     print ("start to set the modbus registers")
-    iagent_client = HelperClient(server=("127.0.0.1", 5683))
     random_number = random.randint(100,30000)
-    path = "/mb/{}/1/1".format(bus_name)
-    iagent_client.put(path, str(random_number))
+    res1=master.execute(slave_id, cst.WRITE_SINGLE_REGISTER, 1, output_value=random_number)
     print (f'write {random_number} to reg 1')
 
-    path = "/mb/{}/1/2?coding=iabcd&fc=16".format(bus_name)
-    iagent_client.put(path, "6553512")
-    print (f'write 6553512 to reg 2/3')
+    value1=random.randint(0,100)
+    value2=random.randint(0,100)
+    res2=master.execute(slave_id, cst.WRITE_MULTIPLE_REGISTERS, 2, output_value=[value1,value2])
+    print (f'write {value1*256*256+value2} to reg 2/3')
 
-    path = "/mb/{}/1/4?coding=abcd&fc=16".format(bus_name)
-    value = "65535.56"
-    iagent_client.put(path, value)
-    print (f'write 65535.56 to reg 4/5\n')
+    value = 65535.56
+    res3=master.execute(slave_id, cst.WRITE_MULTIPLE_REGISTERS, 4, output_value=[value], data_format='>f')
+    print (f'write {value} to reg 4/5\n')
 
+    val=random.randint(0,1)
+    val1=random.randint(0,1)
+    val2=random.randint(0,1)
+    res1=master.execute(slave_id, cst.WRITE_MULTIPLE_REGISTERS, 12, output_value=[val,val1,val2])
     # expect the PLC APP will read from the register 1 and write it back to register 100
+    print (f'write {[val,val1,val2]} to reg 12/13/14\n')
     print ("Start to read the modbus registers")
     cnt = 0
     while cnt < 3:
         cnt = cnt + 1
         time.sleep(2)
-        response = iagent_client.get("/mb/bus-1/1/100")
-        response2 = iagent_client.get("/mb/bus-1/1/101?coding=iabcd")
+        response=master.execute(slave_id, cst.READ_HOLDING_REGISTERS, 100, 1)
+        response2=master.execute(slave_id, cst.READ_HOLDING_REGISTERS, 101, 2)
         if response == None or response2 == None:
             print ("Failed to read from reg 100 and 101")
             continue;
-        if response.payload == None or response2.payload == None :
+        if len(response2) == None or len(response2) == 0 :
             print ("No data from reg 100, 101/102")
             continue;
-        if  response.code != defines.Codes.CONTENT.number or response2.code != defines.Codes.CONTENT.number:
-            print ("Failed to read from reg 100 and 101/102")
-            continue;
-        print (f'read {response.payload} from reg 100')
-        if int(response.payload) == (random_number+1):
+        print (f'read {response[0]} from reg 100')
+        if int(response[0]) == (random_number+1):
             print('..OK')
         else:
             continue
-        print (f'read {response2.payload} from reg 101/102')
-        if response2.payload == "6553511" :
+        print (f'read {register_value(response2)} from reg 101/102')
+        if register_value(response2)== value1*256*256+value2-1:
             print('..OK')
             break;
         print('..Not OK')
@@ -112,42 +121,51 @@ if __name__ == "__main__":
 
     cnt = 0
     while cnt < 3:
+        cnt = cnt + 1
         time.sleep(1)
-        response2 = iagent_client.get("/mb/bus-1/1/103?coding=abcd")
+        response2 = master.execute(slave_id, cst.READ_HOLDING_REGISTERS, 103, 2, data_format='>f')
         if response2 == None:
             print ("Failed to read from reg 103/104")
             continue;
-        if response2.payload == None :
+        if response2[0]== None :
             print ("No data read from reg 103/104")
             continue;
-        if  response2.code != defines.Codes.CONTENT.number:
-            print ("Failed to read from reg 103/104")
-            continue;
-
-        print (f'read {response2.payload} from reg 103/104')
-        if abs(float(response2.payload) - float(value)) < 0.1:
+        print (f'read {response2[0]} from reg 103/104')
+        if abs(float(response2[0]) - float(value)) < 0.1:
             print('..OK')
             break;
         print('..Not OK')
-        cnt = cnt + 1
 
     if cnt == 3:
         print("failed to pass IO REAL TYPE test..")
         sys.exit(1)
 
+    cnt = 0
+    while cnt < 3:
+        time.sleep(1.5)
+        response2=master.execute(slave_id, cst.READ_HOLDING_REGISTERS, 112, 3)
+        if len(response2)==0 or response2==None:
+            print ("Failed to read from reg 112/113/114")
+            continue;
+        print (f'read {response2} from reg 112/113/114')
+        if list[response2]==list[val,val1,val2]:
+            print('..OK')
+            break;
+        print('..Not OK')
+        cnt = cnt + 1
+    if cnt == 3:
+        print("failed to pass IO REAL TYPE test..")
+        sys.exit(1)
 
     cnt = 0
     while cnt < 10:
         time.sleep(1)
-        response2 = iagent_client.get("/mb/bus-1/1/20")
-        if response2.code != defines.Codes.CONTENT.number or response2.payload != '1':
-            print("failed to check error count：" + str(response2.payload))
+        response2 = master.execute(slave_id, cst.READ_HOLDING_REGISTERS, 20, 1)
+        if response2 == None or response2[0]!=1:
+            print(f"failed to check error count：{response2[0]}")
             sys.exit(1)
 
         print(f'{cnt}: check error count OK..')
         cnt = cnt + 1
-
-    print("Pass!")
-
     sys.exit(0)
 

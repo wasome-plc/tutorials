@@ -24,7 +24,7 @@
 ## 测试程序 (modbus_test.py)
 测试内容：
 - 进程存在
-- bus已经open
+- 从站设备已open
 - COAP查询plc状态
 - 测试程序向plc app读取的寄存器随机写入MODBUS数据，然后读取plc app的写寄存器，检查在特定时间内，数据是否满足期望。
 
@@ -33,8 +33,8 @@
 1. 将编译打包好的PLC APP程序部署到目标机（可以是开发机相同的主机）
 2. 打开页面 http://<目标机IP>:3000/#/modbus, 点击“MODBUS从站(PLC应用)”栏的"+ Add"按钮添加从站"device_ch07_2" 
 3. 确认部署的PLC实例进入运行状态
-4. 确认目标机上安装了iagent和modbus_simulator软件，并在运行状态
-5. 执行测试程序`modbus_test.py`
+4. 确认目标机上安装了wa-agent 和 wa-plc-framework，并在运行状态
+5. 执行测试程序`modbus_test.py`,如果目标机不是本机， 请替换脚本中的ip地址127.0.0.1为目标机的IP，端口号post替换为device_cha05_4的从站设备的端口号
 ```
    python3 modbus_test.py
 ```
@@ -48,44 +48,43 @@ PLC程序中包含了多种IO地址访问模式。
 ### 1: 双字节和四字节整数的访问
 输入：
 ```
-ST程序中定义IO类型变量：
-        x0 AT %IW0 : INT;
-        x1 AT %ID2 : DINT;
-
 IO配置中定义目标内存地址和外部设备的数据交互：
         {
-            "location": 0,
-            "type": "INT",
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/1"
+                "type": "INT",
+                "reg": 3,
+                "addr": 1,
+                "items": 1,
+                "variable": "x0"
         },
         {
-            "location": 2,
-            "type": "DINT",
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/2?coding=iabcd"
+                "type": "DINT",
+                "reg": 3,
+                "addr": 2,
+                "code": "abcdi",
+                "items": 1,
+                "variable": "x1"
         },
 
 ```
 
 输出：
 ```
-ST程序中定义IO类型变量：
-        t0 AT %QW0 : INT;
-        t1 AT %QD2 : DINT;
-
 IO配置中定义目标内存地址和外部设备的数据交互：
         {
-            "location": 0,
-            "type": "INT",
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/100"
+                "type": "INT",
+                "reg": 6,
+                "addr": 100,
+                "items": 1,
+                "variable": "t0"
         },
         {
-            "location": 2,
-            "type": "DINT",
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/101?fc=16&coding=iabcd"
+                "type": "DINT",
+                "reg": 6,
+                "addr": 101,
+                "code": "abcdi",
+                "fc": 16,
+                "items": 1,
+                "variable": "t1"
         },
 
 ```
@@ -94,37 +93,33 @@ IO配置中定义目标内存地址和外部设备的数据交互：
 
 - t0 = x0 + 1 ---> reg100 = reg1 +1
 - t1 = x1 -1  ---> reg101 = reg2 -1
-- 
 
 ### 2 浮点
 输入：
 
 ```
-ST程序中定义IO类型变量：
-        x2 AT %ID6 : REAL;
-
 IO配置中定义目标内存地址和外部设备的数据交互：
         {
-            "location": 6,
-            "type": "REAL",
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/4?coding=abcd"
+                "type": "REAL",
+                "reg": 3,
+                "addr": 4,
+                "code": "abcd",
+                "items": 1,
+                "variable": "x2"
         },
-
 ```
-
 
 输出：
 ```
-ST程序中定义IO类型变量：
-        t2 AT %QD6 : REAL;
-
 IO配置中定义目标内存地址和外部设备的数据交互：
         {
-            "location": 6,
-            "type": "REAL",
-            "num" :  1,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/103?fc=16&coding=abcd"
+                "type": "REAL",
+                "reg": 6,
+                "addr": 103,
+                "code": "abcd",
+                "fc": 16,
+                "items": 1,
+                "variable": "t2"
         },
 ```
 验证方法：
@@ -136,28 +131,28 @@ IO配置中定义目标内存地址和外部设备的数据交互：
 - ST字节数组对应到多个IO连续的地址
 - 测试`num` = 3
 ```
-ST程序中定义IO类型变量：
-        INPUTS AT %IB12 : ARRAY[0..2] OF BYTE;
-
 IO配置中定义目标内存地址和外部设备的数据交互：
         {
-            "location": 11,
-            "type": "SINT",
-            "num" :  3,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/10?fc=1&items=3"
+                "reg": 3,
+                "addr": 12,
+                "items": 3,
+                "code": "",
+                "type": "INT",
+                "variable": "INPUTS"
         }
-
+```
 输出：  
-ST程序中定义IO类型变量：
-        OUTPUTS AT %QB12 : ARRAY[0..2] OF BYTE;
 
+```
 IO配置中定义目标内存地址和外部设备的数据交互：
         {
-            "location": 12,
-            "type": "BYTE",
-            "num" :  3,
-            "access": "coap://127.0.0.1:5683/mb/bus-1/1/12?fc=5&items=3"
-        }
+                "reg": 6,
+                "addr": 112,
+                "items": 3,
+                "code": "",
+                "type": "INT",
+                "variable": "OUTPUTS"
+        },
 ```
 
 验证方法：
