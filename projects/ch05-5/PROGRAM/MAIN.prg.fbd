@@ -40,12 +40,14 @@
             "inputs": [
                 {
                     "type": "BOOL",
+                    "description": "",
                     "linkedVariable": "",
                     "not": false,
                     "paramName": "I0"
                 },
                 {
                     "type": "BOOL",
+                    "description": "",
                     "linkedVariable": "",
                     "not": false,
                     "paramName": "M"
@@ -54,6 +56,7 @@
             "outputs": [
                 {
                     "type": "BOOL",
+                    "description": "",
                     "linkedVariable": "out1",
                     "not": false,
                     "paramName": "Q_1"
@@ -65,16 +68,16 @@
             "var_name": "fbd_test_2_1",
             "id": "fbd_test_2_1",
             "top": 190,
-            "left": 730,
+            "left": 670,
+            "index": 1,
             "order": "2",
-            "focus": false,
-            "index": 1
+            "focus": true
         }
     ],
     "edges": [
         {
             "shape": "edge",
-            "id": "4de02b9a-9493-4da5-b1d6-2c3b5ecf37ce",
+            "id": "271f2237-68a3-4a30-af35-b772ba869c67",
             "connector": {
                 "name": "rounded"
             },
@@ -86,15 +89,11 @@
             "target": {
                 "cell": "fbd_test_2_1",
                 "port": "input.I0"
-            },
-            "tools": {
-                "items": [],
-                "name": null
             }
         },
         {
             "shape": "edge",
-            "id": "1f9f7666-f607-45d4-bbdf-4c1a8bf8a28a",
+            "id": "cae72648-9b9d-472a-b92a-2f5c18cac7c6",
             "connector": {
                 "name": "rounded"
             },
@@ -106,39 +105,9 @@
             "target": {
                 "cell": "fbd_test_2_1",
                 "port": "input.M"
-            },
-            "tools": {
-                "items": [],
-                "name": null
             }
         }
     ],
-    "variables": [
-        {
-            "name": "d",
-            "category": "VAR",
-            "type": "BOOL"
-        },
-        {
-            "name": "s",
-            "category": "VAR",
-            "type": "BOOL"
-        },
-        {
-            "name": "r1",
-            "category": "VAR",
-            "type": "BOOL"
-        },
-        {
-            "name": "sa",
-            "category": "VAR",
-            "type": "INT"
-        },
-        {
-            "name": "ft",
-            "category": "VAR",
-            "type": "INT"
-        }
-    ],
+    "variables": [],
     "type": "PROGRAM"
 }

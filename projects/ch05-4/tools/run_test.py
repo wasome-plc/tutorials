@@ -17,8 +17,10 @@ import shutil
 from subprocess import check_output, CalledProcessError
 import json
 import coapthon
-from coapthon import defines
-from coapthon.client.helperclient import HelperClient
+
+import modbus_tk
+import modbus_tk.defines as cst
+from modbus_tk import modbus_tcp
 
 def signal_handler(signal, frame):
         print('Pressed Ctrl+C!')
@@ -35,21 +37,22 @@ if __name__ == "__main__":
     parser.add_argument('-b', dest='build',
             default = False, action = 'store_true',
             help='build the repo')
-
+    host='127.0.0.1'
+    port = 6002
     print("\nIO Mapping")
     print("------------------------------------------------------------")
     for r in [0, 1, 2, 3]:
-        print(f'IX{r}0 <---> /mb/bus-1/1/8{r+1}')
+        print(f'IX{r}0 <---> device_cha05_4/1/8{r+1}')
     for r in [0, 1, 2]:
-        print(f'QX{r}0 <---> /mb/bus-1/1/9{r+1}')
+        print(f'QX{r}0 <---> device_cha05_4/1/9{r+1}')
     print("\nCases Status")
     print("------------------------------------------------------------")
     Register_signal_handler()
 
-    bus_name = "bus-1"
+    
 
     # Write values to modubs
-    iagent_client = HelperClient(server=("127.0.0.1", 5683))
+    master = modbus_tcp.TcpMaster(host=host, port=port)
 
     data_in =   [[{'r':81, 'v':1}, {'r':82, 'v':1}, {'r':83, 'v':0}, {'r':84, 'v':0}], \
                  [{'r':81, 'v':1}, {'r':82, 'v':0}, {'r':83, 'v':1}, {'r':84, 'v':0}], \
@@ -71,24 +74,22 @@ if __name__ == "__main__":
     for i in range(len(data_in)):
         # write input modbus reg via coap
         for j in range(len(data_in[i])):
-            path = f'/mb/{bus_name}/1/{data_in[i][j]["r"]}'
-            iagent_client.put(path, str(data_in[i][j]["v"]))
+            res=master.execute(1,cst.WRITE_SINGLE_REGISTER, data_in[i][j]["r"], output_value=data_in[i][j]["v"])
 
-        time.sleep(1);
+        time.sleep(2);
 
         # read output modbus reg via coap 
         for j in range(len(data_out[i])):
             success = True
-            path = f'/mb/{bus_name}/1/{data_out[i][j]["r"]}'
-            response = iagent_client.get(path)
-            if response == None or response.code != defines.Codes.CONTENT.number:
-                print(f'case{i}: FAIL:    reg{data_out[i][j]["r"]}: get. {path}, response code: {response.code}')
+            response=master.execute(1,cst.READ_HOLDING_REGISTERS, data_out[i][j]["r"],1)
+            if response == None :
+                print(f'case{i}: FAIL:    reg{data_out[i][j]["r"]}, response code: {response}')
                 success = False
                 break
 
-            return_data = int(response.payload)
+            return_data = response[0]
             if ((return_data==data_out[i][j]["v"])) == False:
-                print(f'case{i}: FAIL:    {path}, confirm output fail, response payload: {response.payload }, expect: {data_out[i][j]["v"]}')
+                print(f'case{i}: FAIL:    {data_out[i][j]["r"]}:{data_out[i][j]["v"]}, confirm output fail, response payload: {response }, expect: {data_out[i][j]["v"]}')
                 success = False
                 break;
         if(success):

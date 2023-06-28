@@ -37,8 +37,10 @@ FUNCTION_BLOCK fbd_test_2
       Q_1:=0;
     ELSIF I0=1 AND M=1 THEN
         Q_1:=1;
-       IF Q_1=1 THEN
-           I0_3:=0;
-       END_IF;
+        IF Q_1=1 THEN
+            I0_3:=0;
+        END_IF;
+    ELSIF I0=1 AND M=0 THEN
+        Q_1:=0;
   END_IF;
 END_FUNCTION_BLOCK
