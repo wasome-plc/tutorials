@@ -15,7 +15,7 @@ void greeting_from_c(char * msg);
 
 /************* Function Block counter *************/
 typedef struct counter_FUNCTION_BLOCK {
-  int IN; // VAR_INPUT
+  int IN1; // VAR_INPUT
   int CNT; // VAR_OUTPUT
 } counter_FUNCTION_BLOCK;
 

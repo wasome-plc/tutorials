@@ -29,7 +29,7 @@
                 "class": "C",
                 "var_decls": [
                     {
-                        "name": "IN",
+                        "name": "IN1",
                         "type": "DINT",
                         "keyword": "VAR_INPUT"
                     },

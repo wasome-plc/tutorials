@@ -1,6 +1,6 @@
 {
     "name": "ch05-5",
-    "version": "1.0.3",
+    "version": "0.0.1",
     "description": "使用FBD开发PLC APP",
     "category": "application",
     "template": "",
@@ -8,11 +8,6 @@
     "main_language": "st",
     "lastOpenTime": 1682006400000,
     "excludes": [
-        "ex.prg.fbd",
-        ".generate/ex.prg.fbd.st",
-        "cd.fb.ld",
-        ".generate/cd.fb.ld.st",
-        "ad.fb.ld",
-        ".generate/ad.fb.ld.st"
-    ]
+    ],
+    "global_modules": []
 }

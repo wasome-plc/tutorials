@@ -8,7 +8,19 @@
         "IO_output_size": 12,
         "IO_input_addr": 1000,
         "IO_output_addr": 1000,
-        "setting": {},
+        "setting": {
+            "mode": "Position",
+            "encoder_count_per_unit": 1000000,
+            "node_buffer_size": 100,
+            "sw_vel_limit": false,
+            "vel_limit": 5000,
+            "sw_acc_limit": false,
+            "acc_limit": 5000,
+            "sw_range_limit": false,
+            "pos_positive_limit": 5000,
+            "pos_negative_limit": 5000,
+            "frequency": 1000
+        },
         "address": {
             "protocol": "ethercat",
             "device_number": 1500,

@@ -7,7 +7,8 @@
                     {
                         "name": "task1",
                         "priority": 1,
-                        "interval": 1000
+                        "interval": 1000,
+                        "row_index": 0
                     }
                 ],
                 "programs": [
@@ -15,7 +16,8 @@
                         "seq": 1,
                         "task": "task1",
                         "type": "PLC_PRG",
-                        "name": "task1"
+                        "name": "task1",
+                        "row_index": 0
                     }
                 ],
                 "name": "_RESOURCE_MANUAL_"

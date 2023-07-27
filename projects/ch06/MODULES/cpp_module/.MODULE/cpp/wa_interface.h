@@ -23,7 +23,7 @@ void __init_cpp_counter(FBData *self);
 
 class cpp_counter : public IECFBBase {
     enum {
-      LOC_IN,  // VAR_INPUT, int
+      LOC_IN1,  // VAR_INPUT, int
       LOC_CNT,  // VAR_OUTPUT, int
     };
 
@@ -32,7 +32,7 @@ class cpp_counter : public IECFBBase {
     cpp_counter &operator=(const cpp_counter &);
 
   private:
-    int IN;
+    int IN1;
     int CNT;
 
   public:

@@ -4,12 +4,12 @@
 /************* Function Block counter *************/
 void
 __init_counter(counter_FUNCTION_BLOCK *self) {
-    self->IN = 0;
+    self->IN1 = 0;
     self->CNT = 0;
 }
 
 void
 counter(counter_FUNCTION_BLOCK *self) {
-    self->CNT += self->IN;
+    self->CNT += self->IN1;
 }
 /*********** End Function Block counter ***********/

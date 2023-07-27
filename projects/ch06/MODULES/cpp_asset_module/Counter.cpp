@@ -4,7 +4,7 @@
 
 Counter::Counter()
 {
-    IN = 0;
+    IN1 = 0;
     CNT = 0;
 }
 
@@ -14,5 +14,5 @@ Counter::~Counter()
 
 // 该类的执行函数，可以是任意名称
 void Counter::do_count() {
-    CNT += IN;
+    CNT += IN1;
 }

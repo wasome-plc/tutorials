@@ -13,6 +13,5 @@ FUNCTION MC_Init_Axis
 
     Axis1 := mc_axis_create('Axis1');
     mc_axis_assign_servo(Axis1, mc_servo_new_DS402());
-    mc_axis_set_IO(Axis1, 1000, 1000);
 
 END_FUNCTION
