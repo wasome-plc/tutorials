@@ -7,7 +7,9 @@
     "vsc": true,
     "main_language": "st",
     "lastOpenTime": 1682006400000,
-    "excludes": [
-    ],
-    "global_modules": []
+    "excludes": [],
+    "global_modules": [],
+    "select_plc": {},
+    "memory_min_mb": null,
+    "multi_instance": true
 }

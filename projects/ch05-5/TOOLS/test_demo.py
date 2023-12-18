@@ -16,7 +16,7 @@ import logging
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Modbus test server validator")
     parser.add_argument('-p', dest = 'port', action = 'store',
-        default = 1510,
+        default = 6002,
         help = 'modbus device port number')
     parser.add_argument('-s', dest = 'step', action = 'store_true',
         default = False,
@@ -29,9 +29,9 @@ if __name__ == "__main__":
     fc_write = cst.WRITE_MULTIPLE_COILS
     logger = modbus_tk.utils.create_logger("console", level=logging.DEBUG)
 
-    os.system('kill -9 `pidof modbus_test_server`');
+    # os.system('kill -9 `pidof modbus_test_server`');
     slave_id=3
-    os.system(f'/ams/wa-agent/product/modbus_test_server -p {port} &')
+    # os.system(f'/ams/wa-agent/product/modbus_test_server -p {port} &')
     # os.system(f'/ams/wa-agent/product/modbus_test_server -p {port+1} &')
 
     time.sleep(2)

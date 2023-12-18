@@ -5,5 +5,9 @@
     "category": "application",
     "template": "",
     "vsc": true,
-    "lastOpenTime": 1650038400000
+    "lastOpenTime": 1650038400000,
+    "select_plc": {},
+    "motion_control": false,
+    "multi_instance": false,
+    "memory_min_mb": null
 }

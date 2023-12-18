@@ -9,7 +9,6 @@
                 "device_number": 1000,
                 "default_device_name": "is620n",
                 "desc": "汇川IS620N",
-                "master": 0,
                 "slave_ID": 20,
                 "input_start": "",
                 "output_start": "",
@@ -20,7 +19,8 @@
                         "variable": "Reg_6041_status",
                         "offset": "",
                         "isEdit": true,
-                        "type": "INT"
+                        "type": "INT",
+                        "old": false
                     },
                     {
                         "obj_entry": 24676,
@@ -28,7 +28,8 @@
                         "variable": "Reg_6064_actual_pos",
                         "offset": "",
                         "isEdit": true,
-                        "type": "DINT"
+                        "type": "DINT",
+                        "old": false
                     }
                 ],
                 "output_map": [
@@ -38,7 +39,8 @@
                         "variable": "Reg_6040_control_word",
                         "offset": "",
                         "isEdit": true,
-                        "type": "INT"
+                        "type": "INT",
+                        "old": false
                     },
                     {
                         "obj_entry": 24698,
@@ -46,7 +48,8 @@
                         "variable": "Reg_607a_target_pos",
                         "offset": "",
                         "isEdit": true,
-                        "type": "DINT"
+                        "type": "DINT",
+                        "old": false
                     },
                     {
                         "obj_entry": 24672,
@@ -54,7 +57,8 @@
                         "variable": "Reg_6060_modesel",
                         "offset": "",
                         "isEdit": true,
-                        "type": "SINT"
+                        "type": "SINT",
+                        "old": false
                     },
                     {
                         "obj_entry": 24831,
@@ -62,9 +66,12 @@
                         "variable": "Reg_60ff_target_vel",
                         "offset": "",
                         "isEdit": true,
-                        "type": "DINT"
+                        "type": "DINT",
+                        "old": false
                     }
-                ]
+                ],
+                "selectDevice": false,
+                "title": "2"
             }
         ]
     },
@@ -73,5 +80,6 @@
         "read_errs_threshold": 3,
         "write_errs_threshold": 3,
         "fault_action": "stop"
-    }
+    },
+    "rn": 24
 }

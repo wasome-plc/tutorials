@@ -5,8 +5,9 @@
     "category": "application",
     "template": "",
     "vsc": true,
-    "lastOpenTime": 1651928549853,
+    "lastOpenTime": 1651852800000,
     "excludes": [
         "VVV/GGG.st"
-    ]
+    ],
+    "memory_min_mb": null
 }

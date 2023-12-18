@@ -16,8 +16,11 @@
         {
             "name": "DS402",
             "version": "1.0.0",
-            "description": "Servo driver for DS402"
+            "description": "system default module for motion control"
         }
     ],
-    "excludes": []
+    "excludes": [],
+    "select_plc": {},
+    "memory_min_mb": null,
+    "multi_instance": true
 }

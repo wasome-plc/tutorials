@@ -35,14 +35,14 @@
                         "items": 1,
                         "variable": "x2"
                     },
-                {
-                    "reg": 3,
-                    "addr": 12,
-                    "items": 3,
-                    "code": "",
-                    "type": "INT",
-                    "variable": "INPUTS"
-                }
+                    {
+                        "reg": 3,
+                        "addr": 12,
+                        "items": 3,
+                        "code": "",
+                        "type": "INT",
+                        "variable": "INPUTS"
+                    }
                 ],
                 "output_map": [
                     {
@@ -89,5 +89,6 @@
                 ]
             }
         ]
-    }
+    },
+    "rn": 3
 }
