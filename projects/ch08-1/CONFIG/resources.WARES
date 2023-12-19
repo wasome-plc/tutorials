@@ -5,17 +5,24 @@
             {
                 "tasks": [
                     {
+                        "name": "MainTask",
+                        "priority": 1,
+                        "interval": 1,
+                        "row_index": 0
+                    },
+                    {
                         "name": "task1",
                         "priority": 1,
-                        "interval": 1000
+                        "interval": 100,
+                        "row_index": 1
                     }
                 ],
                 "programs": [
                     {
                         "seq": 1,
-                        "task": "task1",
-                        "type": "PLC_PRG",
-                        "name": "task1"
+                        "task": "MainTask",
+                        "type": "fbd_prog_main",
+                        "row_index": 0
                     }
                 ],
                 "name": "_RESOURCE_MANUAL_"

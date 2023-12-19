@@ -19,16 +19,16 @@ cpp_counter::cpp_counter() {
 
     value_addr_map_ =
         (void **)malloc(cpp_counter::IEC_FIELD_CNT * sizeof(void *));
-    value_addr_map_[LOC_IN] = &IN;
+    value_addr_map_[LOC_IN1] = &IN1;
     value_addr_map_[LOC_CNT] = &CNT;
 
     value_bytes_map_ =
         (unsigned char *)malloc(cpp_counter::IEC_FIELD_CNT);
-    value_bytes_map_[LOC_IN] = sizeof(int);
+    value_bytes_map_[LOC_IN1] = sizeof(int);
     value_bytes_map_[LOC_CNT] = sizeof(int);
 
     /* USER CONSTRUCT START */
-    IN = 0;
+    IN1 = 0;
     CNT = 0;
     /* USER CONSTRUCT END */
 }
@@ -41,7 +41,7 @@ cpp_counter::~cpp_counter() {
 
 void cpp_counter::call() {
     /* USER CALL START */
-    CNT += IN;
+    CNT += IN1;
     /* USER CALL END */
 }
 

@@ -7,15 +7,23 @@
                     {
                         "name": "task1",
                         "priority": 1,
-                        "interval": 1000
+                        "interval": 1000,
+                        "row_index": 0
+                    },
+                    {
+                        "name": "MainTask",
+                        "priority": 1,
+                        "interval": 10,
+                        "row_index": 1
                     }
                 ],
                 "programs": [
                     {
                         "seq": 1,
-                        "task": "task1",
+                        "task": "MainTask",
                         "type": "PLC_PRG",
-                        "name": "task1"
+                        "name": "task1",
+                        "row_index": 0
                     }
                 ],
                 "name": "_RESOURCE_MANUAL_"

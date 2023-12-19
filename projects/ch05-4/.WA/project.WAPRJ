@@ -8,6 +8,7 @@
     "lastOpenTime": 1663862400000,
     "excludes": [],
     "motion_control": false,
-    "global_modules": [
-    ]
+    "global_modules": [],
+    "select_plc": {},
+    "memory_min_mb": null
 }

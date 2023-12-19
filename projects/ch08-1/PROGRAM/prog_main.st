@@ -12,10 +12,10 @@ PROGRAM PLC_PRG
        RETURN;
     END_IF;
 
-    fbHome(Axis := Axis1, Execute := TRUE, Position := 0, BufferMode := 0 /*mcAborting*/);
+    // fbHome(Axis := Axis1, Execute := TRUE, Position := 0, BufferMode := 0 /*mcAborting*/);
 
-    fbMoveVel(Axis := Axis1, Execute := fbHome.Done, ContinuousUpdate:= TRUE, Velocity:=100);
+    fbMoveVel(Axis := Axis1, Execute := fbPower.Status, ContinuousUpdate:= TRUE, Velocity:=1,Acceleration:=50,Deceleration:=10,Jerk:=10);
 
-    fbStop(Axis := Axis1, Execute := fbMoveVel.InVelocity);
+    // fbStop(Axis := Axis1, Execute := fbMoveVel.InVelocity);
 
 END_PROGRAM

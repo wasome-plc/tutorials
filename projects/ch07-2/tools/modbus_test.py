@@ -50,10 +50,10 @@ if __name__ == "__main__":
 
     logger = modbus_tk.utils.create_logger("console", level=logging.DEBUG)
 
-    os.system('kill -9 `pidof modbus_test_server`');
-    port=6003
+    # os.system('kill -9 `pidof modbus_test_server`');
+    port=6002
     slave_id=3
-    os.system(f'/ams/wa-agent/product/modbus_test_server -p {port} &')
+    # os.system(f'/ams/wa-agent/product/modbus_test_server -p {port} &')
 
     time.sleep(2)
     try:

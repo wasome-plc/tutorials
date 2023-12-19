@@ -66,5 +66,6 @@
         "read_errs_threshold": 10,
         "write_errs_threshold": 10,
         "fault_action": "stop"
-    }
+    },
+    "rn": 4
 }

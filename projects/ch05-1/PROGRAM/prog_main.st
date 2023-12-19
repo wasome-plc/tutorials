@@ -80,14 +80,19 @@ END_FUNCTION
 (**  使用repeat循环语句计算1+...+n  *)
 /// *****************
 FUNCTION getSumWithRepeat : DINT
-    VAR_INPUT n: SINT; END_VAR
-    VAR i: SINT; sum: DINT := 0; END_VAR
+    VAR_INPUT 
+        n: SINT; 
+    END_VAR
+    VAR 
+        i: SINT; 
+        sum: DINT := 0; 
+    END_VAR
 
     i := 1;
     REPEAT
         sum := sum + i;
         i := i + 1;
-    UNTIL i <= n
+    UNTIL i > n
     END_REPEAT;
     getSumWithRepeat := sum;
 END_FUNCTION

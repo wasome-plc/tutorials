@@ -1,19 +1,41 @@
-[
-    {
-        "name": "Axis1",
-        "servo_type": "DS402-Generic",
-        "module_name": "DS402",
-        "driver_ver": "1.0.0",
-        "IO_input_size": 6,
-        "IO_output_size": 12,
-        "IO_input_addr": 1000,
-        "IO_output_addr": 1000,
-        "setting": {},
-        "address": {
-            "protocol": "ethercat",
-            "device_number": 1500,
-            "master": 0,
-            "slave": 20
+{
+    "axises": [
+        {
+            "name": "Axis1",
+            "servo_type": "DS402-Generic",
+            "module_name": "DS402",
+            "driver_ver": "1.0.0",
+            "IO_input_size": 6,
+            "IO_output_size": 12,
+            "IO_input_addr": 1000,
+            "IO_output_addr": 1000,
+            "setting": {
+                "mode": "Position",
+                "workstation_mode": "cycle",
+                "node_buffer_size": 100,
+                "sw_vel_limit": true,
+                "vel_limit": 720,
+                "sw_acc_limit": true,
+                "acc_limit": 50,
+                "sw_range_limit": true,
+                "pos_positive_limit": 300000,
+                "pos_negative_limit": 300000,
+                "frequency": 1000,
+                "user_unit": "degree",
+                "gear_ratio": 1,
+                "user_units_per_round": 360,
+                "default_s_curve": "trapezoid",
+                "encoder_pluse_count": 1048576,
+                "encoder_count_per_unit": 2912.711111111111
+            },
+            "address": {
+                "protocol": "ethercat",
+                "device_number": 1500,
+                "master": null
+            }
         }
-    }
-]
+    ],
+    "master": 0,
+    "task": "MainTask",
+    "protocol": "ethercat"
+}

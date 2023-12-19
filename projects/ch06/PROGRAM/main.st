@@ -11,8 +11,8 @@ PROGRAM PLC_PRG
         greeting_from_c('Hello PLC');
     END_IF;
 
-    c_counter_inst(IN := 1, CNT => res1);
-    cpp_counter_inst(IN := 1, CNT => res2);
-    st_counter_inst(IN := 1, CNT => res3);
+    c_counter_inst(IN1 := 1, CNT => res1);
+    cpp_counter_inst(IN1 := 1, CNT => res2);
+    st_counter_inst(IN1 := 1, CNT => res3);
 
 END_PROGRAM

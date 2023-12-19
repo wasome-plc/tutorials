@@ -9,6 +9,11 @@
                         "priority": 1,
                         "interval": 1000,
                         "row_index": 0
+                    },
+                    {
+                        "name": "MainTask",
+                        "priority": 1,
+                        "interval": 1
                     }
                 ],
                 "programs": [

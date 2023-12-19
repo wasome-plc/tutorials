@@ -23,7 +23,7 @@ void __init_cpp_asset_counter(FBData *self);
 
 class cpp_asset_counter : public IECFBBase {
     enum {
-      LOC_IN,  // VAR_INPUT, int
+      LOC_IN1,  // VAR_INPUT, int
       LOC_CNT,  // VAR_OUTPUT, int
     };
 

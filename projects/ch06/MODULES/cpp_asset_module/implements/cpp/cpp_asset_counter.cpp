@@ -23,12 +23,11 @@ cpp_asset_counter::cpp_asset_counter() {
     value_bytes_map_ =
         (unsigned char *)malloc(cpp_asset_counter::IEC_FIELD_CNT);
 
-    value_bytes_map_[LOC_IN] = sizeof(int);
+    value_bytes_map_[LOC_IN1] = sizeof(int);
     value_bytes_map_[LOC_CNT] = sizeof(int);
 
     /* USER CONSTRUCT START */
-    /* 实例化一个已有的Counter类作为实现类 */
-    pImpl = new Counter();
+    // pImpl = new UserClass();
     /* USER CONSTRUCT END */
 }
 
@@ -75,10 +74,10 @@ void cpp_asset_counter::fb_set_value(int index, void *value) {
     auto my_class = (Counter *)(pImpl);
 
     switch (index) {
-    case LOC_IN:
+    case LOC_IN1:
         /* 缓存该变量的地址，下次赋值时直接运行第70行，提升执行效率 */
-        value_addr_map_[index] = &my_class->IN;
-        my_class->IN = *(int *)value;
+        value_addr_map_[index] = &my_class->IN1;
+        my_class->IN1 = *(int *)value;
         break;
     }
     /* USER SET END */

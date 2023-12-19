@@ -40,7 +40,8 @@
                     }
                 ],
                 "output_map": [],
-                "bus": 0
+                "bus": 0,
+                "title": ""
             },
             {
                 "device_number": 1,
@@ -93,5 +94,6 @@
         "read_errs_threshold": 100,
         "write_errs_threshold": 10,
         "fault_action": "stop"
-    }
+    },
+    "rn": 4
 }

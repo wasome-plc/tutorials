@@ -5,8 +5,10 @@
     "category": "application",
     "template": "",
     "vsc": true,
-    "lastOpenTime": 1649917491341,
+    "lastOpenTime": 1649865600000,
     "excludes": [
         "arrays.st"
-    ]
+    ],
+    "select_plc": {},
+    "memory_min_mb": null
 }
